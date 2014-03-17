@@ -70,3 +70,4 @@ Check out http://shopify.github.com/dashing for more information.
 - [Pivotal Tracker Project](https://www.pivotaltracker.com/s/projects/950406)
 - [Dashing](http://shopify.github.com/dashing)
 - PM: Michael McGinley
+
