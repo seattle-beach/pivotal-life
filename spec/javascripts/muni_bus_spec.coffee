@@ -17,7 +17,7 @@ describe("MUNI Bus", =>
     expect(isotopeObject).toEqual($('.stops'))
     isotopeConfig = $.fn.isotope.calls.all()[0].args[0]
     expect(isotopeConfig.itemSelector).toEqual('.stop')
-    expect(isotopeConfig.masonryHorizontal).toEqual({rowHeight: 290})
+    expect(isotopeConfig.perfectMasonry).toEqual({layout: "vertical"})
     expect(isotopeConfig.sortBy).toEqual('name')
     expect(isotopeConfig.sortAscending).toEqual(true)
     expect(isotopeConfig.getSortData.name($('<table><caption>FOO</caption></table>'))).toEqual('FOO')
