@@ -8,9 +8,30 @@ A dashboard for Pivots at the office.
 
 To run the status board locally, do the following:
 
+  Download and install the CloudFoundry CLI tool:
+
+    https://github.com/cloudfoundry/cli
+
+  Clone this repo:
+
     $ git clone git@github.com:spilth/pivotal-life.git
     $ cd pivotal-life
     $ bundle
+
+
+  Target the pivotal-life app on the public CloudFoundry deployment:
+
+    $ cf target api.run.pivotal.io
+
+  Log in to CF:
+ 
+    $ cf login
+      # Email: pivotal-beach@googlegroups.com
+      # Password: Workstation password v3
+      # Space: pivotal-life
+
+  Run the app locally using CF environment variables:
+   
     $ ./start.sh
 
 Then navigate to <http://localhost:3030/>.
@@ -45,4 +66,3 @@ Check out http://shopify.github.com/dashing for more information.
 - [Pivotal Tracker Project](https://www.pivotaltracker.com/s/projects/950406)
 - [Dashing](http://shopify.github.com/dashing)
 - PM: Michael McGinley
-
