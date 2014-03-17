@@ -16,7 +16,11 @@ To run the status board locally, do the following:
 
     $ git clone git@github.com:spilth/pivotal-life.git
     $ cd pivotal-life
+
+  Install gems and other dependencies:
+
     $ bundle
+    $ npm install -g coffee-script
 
 
   Target the pivotal-life app on the public CloudFoundry deployment:
