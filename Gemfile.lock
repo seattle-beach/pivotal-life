@@ -52,7 +52,6 @@ GEM
     dotenv (0.9.0)
     equalizer (0.0.7)
     eventmachine (1.0.3)
-    excon (0.25.3)
     execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
@@ -71,12 +70,6 @@ GEM
       guard (>= 2.1.1)
       rspec (~> 2.14)
     hashie (2.0.5)
-    heroku-api (0.3.15)
-      excon (~> 0.25.1)
-    heroku_san (4.3.2)
-      heroku-api (>= 0.1.2)
-      json
-      rake
     hike (1.2.3)
     http (0.5.0)
       http_parser.rb
@@ -200,7 +193,6 @@ DEPENDENCIES
   dotenv
   geocoder
   guard-rspec
-  heroku_san
   jasmine
   nokogiri
   pry

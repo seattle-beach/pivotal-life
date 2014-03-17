@@ -18,7 +18,6 @@ gem 'rspec'
 gem 'jasmine'
 
 group :development do
-  gem 'heroku_san'
   gem 'guard-rspec'
 end
 
