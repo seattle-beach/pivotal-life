@@ -15,16 +15,16 @@ events = []
 
 SCHEDULER.every '10m', :first_in => 0 do |job|
   events = CalendarFetcher.new(calendar_url).data
-  events.sort! { |a,b| a[:when_start_raw] <=> b[:when_start_raw] }
-  send_event('calendar_events', { events: events })
+  events.sort! { |a, b| a[:when_start_raw] <=> b[:when_start_raw] }
+  send_event('calendar_events', {events: events})
 end
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
   events_tmp = Array.new(events)
-  events_tmp.delete_if{|event| DateTime.now().to_time.to_i>=event[:when_end_raw]}
+  events_tmp.delete_if { |event| DateTime.now().to_time.to_i >= event[:when_end_raw] }
 
   if events_tmp.count != events.count
     events = events_tmp
-    send_event('calendar_events', { events: events })
+    send_event('calendar_events', {events: events})
   end
 end
