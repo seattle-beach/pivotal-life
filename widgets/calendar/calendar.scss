@@ -1,11 +1,11 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #ec663c;
+$background-color: #ec663c;
 
-$title-color:       rgba(255, 255, 255, 1);
-$subtitle-color:    rgba(255, 255, 255, 0.7);
-$moreinfo-color:    rgba(255, 255, 255, 0.7);
+$title-color: rgba(255, 255, 255, 1);
+$subtitle-color: rgba(255, 255, 255, 0.7);
+$moreinfo-color: rgba(255, 255, 255, 0.7);
 
 $private-color: rgb(123, 209, 72);
 $business-color: rgb(255, 173, 70);
@@ -31,7 +31,9 @@ $business-color: rgb(255, 173, 70);
   }
 
   .body {
-    margin-bottom: 10px;
+    max-height: 85px;
+    overflow-y: hidden;
+    margin-bottom: 15px;
   }
   .more-info {
     color: $moreinfo-color;
@@ -41,6 +43,7 @@ $business-color: rgb(255, 173, 70);
     font-size: 65px;
   }
 }
+
 .calendar-name-private {
   background-color: $private-color;
 }
@@ -53,4 +56,3 @@ $business-color: rgb(255, 173, 70);
   font-size: 35px;
   padding-bottom: 30px;
 }
-
