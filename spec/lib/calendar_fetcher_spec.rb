@@ -9,7 +9,7 @@ describe CalendarFetcher do
 
   before do
     Timecop.travel(2014, 02, 02, 15, 30, 0) # Superbowl Sunday
-    url = calendar_url + '?singleevents=true&orderby=starttime&start-min=2014-02-02T15%3A30%3A00-08%3A00&start-max=2014-02-10T00%3A00%3A00%2B00%3A00'
+    url = calendar_url + '?orderby=starttime&singleevents=true&start-max=2014-02-10T00:00:00%2B00:00&start-min=2014-02-02T15:30:00-05:00'
     stub_request(:get, url).to_return(body: File.read('spec/fixtures/calendar.xml'))
   end
 
