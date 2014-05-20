@@ -1,8 +1,9 @@
 require 'dashing'
+require 'dotenv'
 
 configure do
   set :auth_token, 'YOUR_AUTH_TOKEN'
-  set :default_dashboard, 'sf'
+  set :default_dashboard, ENV['DEFAULT_DASHBOARD'] || 'default'
 
   helpers do
     def protected!
