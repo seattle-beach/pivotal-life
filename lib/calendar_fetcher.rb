@@ -1,4 +1,7 @@
 require 'date'
+require 'open-uri'
+require 'nokogiri'
+require 'cgi'
 
 class CalendarFetcher
   def initialize(url, name = '')

@@ -1,0 +1,10 @@
+---
+nyc:
+  name: New York City
+  calendar:
+    url: http://www.google.com/calendar/feeds/pivotallabs.com_t6m43imcl7h9i3fbcj62s6gqig%40group.calendar.google.com/public/full
+sf:
+  name: San Francisco
+  calendar:
+    url: http://www.google.com/calendar/feeds/pivotallabs.com_cdjvcp4tfaum7m0kie2na4dpgc%40group.calendar.google.com/public/full
+
