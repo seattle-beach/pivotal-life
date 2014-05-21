@@ -2,8 +2,8 @@ require 'dotenv'
 
 Dotenv.load
 
-latitude = ENV['NYC_LATITUDE'] || 40.740673
-longitude = ENV['NYC_LONGITUDE'] || -73.994808
+latitude = 40.740673
+longitude = -73.994808
 lat_long = [latitude, longitude]
 
 SCHEDULER.every '1m', first_in: 0 do
