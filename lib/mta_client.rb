@@ -32,7 +32,7 @@ class MtaClient
   end
 
   def raw_feed
-    mta_url = URI('http://www.mta.info/status/serviceStatus.txt')
+    mta_url = URI('http://web.mta.info/status/serviceStatus.txt')
     Net::HTTP.get(mta_url)
   end
 
