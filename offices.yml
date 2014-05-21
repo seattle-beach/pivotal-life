@@ -1,6 +1,6 @@
 ---
 nyc:
-  name: New York City
+  name: New York
   calendar:
     url: http://www.google.com/calendar/feeds/pivotallabs.com_t6m43imcl7h9i3fbcj62s6gqig%40group.calendar.google.com/public/full
 sf:
