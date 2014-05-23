@@ -11,8 +11,6 @@ gem 'nokogiri'
 gem 'rake'
 gem 'twitter'
 
-gem 'coveralls', require: false
-
 # so our Rakefile works everywhere
 gem 'rspec'
 gem 'jasmine'
@@ -24,7 +22,7 @@ end
 group :development, :test do
   gem 'pry'
   gem 'vcr'
-  gem 'webmock', '<1.16'
+  gem 'webmock'
   gem 'rack-coffee'
 end
 
