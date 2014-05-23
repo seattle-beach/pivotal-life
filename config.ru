@@ -1,4 +1,10 @@
 require 'dashing'
+require 'dotenv'
+
+Dotenv.load
+
+USERNAME = ENV['AUTH_USERNAME'] || 'admin'
+PASSWORD = ENV['AUTH_PASSWORD'] || 'admin'
 
 configure do
   set :auth_token, 'YOUR_AUTH_TOKEN'
@@ -6,8 +12,17 @@ configure do
 
   helpers do
     def protected!
-     # Put any authentication code you want in here.
-     # This method is run before accessing any resource.
+      return if authorized?
+      headers['WWW-Authenticate'] = 'Basic realm="Restricted Area"'
+      halt 401, "Not authorized\n"
+    end
+
+    def authorized?
+      @auth ||=  Rack::Auth::Basic::Request.new(request.env)
+      @auth.provided? and 
+        @auth.basic? and 
+        @auth.credentials and 
+        @auth.credentials == [USERNAME, PASSWORD]
     end
   end
 end
