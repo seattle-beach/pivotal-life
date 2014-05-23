@@ -1,8 +1,8 @@
-describe("Clock widget", =>
+describe("Rotating Clock widget", =>
   clock_widget = undefined
 
   beforeEach(=>
-    clock_widget = new Dashing.Clock()
+    clock_widget = new Dashing.RotatingClock()
     jasmine.clock().install()
     clock_widget.ready()
   )

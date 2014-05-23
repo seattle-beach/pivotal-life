@@ -1,4 +1,4 @@
-class Dashing.Clock extends Dashing.Widget
+class Dashing.RotatingClock extends Dashing.Widget
 
   ready: =>
     setInterval(@rotateTime, 8000)
