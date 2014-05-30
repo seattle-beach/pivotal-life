@@ -1,4 +1,4 @@
-[![Dependency Status](https://gemnasium.com/pivotal/pivotal-life.svg)](https://gemnasium.com/pivotal/pivotal-life)
+[![Codeship Status for pivotal/pivotal-life](https://codeship.io/projects/2796e000-ca7d-0131-c2df-1aaa67c692f1/status?branch=master)](https://codeship.io/projects/22560) [![Dependency Status](https://gemnasium.com/pivotal/pivotal-life.svg)](https://gemnasium.com/pivotal/pivotal-life)
 
 # Pivotal Life
 
@@ -9,9 +9,14 @@ A dashboard for Pivots at the office.
 - [Ruby](https://www.ruby-lang.org/en/)
 - [Bundler](http://bundler.io/)
 - [NodeJS](http://nodejs.org/) & [npm](https://www.npmjs.org/)
-  - On Mac `brew install node` is recommended
+- [PhantomJS](http://phantomjs.org)
 - [CloudFoundry Command-Line Interface](https://github.com/cloudfoundry/cli)
-  - On Mac `brew install cloudfoundry-cli` is recommended
+
+On Mac you can install NodeJs, PhantomJs and CloudFoundry with the following:
+
+    $ brew install node
+    $ brew install phantomjs
+    $ brew install cloudfoundry-cli
 
 ## Setup
 
