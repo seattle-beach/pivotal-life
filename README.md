@@ -1,4 +1,4 @@
-[![Codeship Status for pivotal/pivotal-life](https://codeship.io/projects/2796e000-ca7d-0131-c2df-1aaa67c692f1/status?branch=master)](https://codeship.io/projects/22560) [![Dependency Status](https://gemnasium.com/pivotal/pivotal-life.svg)](https://gemnasium.com/pivotal/pivotal-life)
+[![Build Status](https://travis-ci.org/pivotal/pivotal-life.svg)](https://travis-ci.org/pivotal/pivotal-life) [![Dependency Status](https://gemnasium.com/pivotal/pivotal-life.svg)](https://gemnasium.com/pivotal/pivotal-life)
 
 # Pivotal Life
 
