@@ -11,8 +11,8 @@ describe Office do
       }
 
       office = Office.new('test', config)
-      expect(office.has_config?(:calendar)).to be_true
-      expect(office.has_config?(:weather)).to be_false
+      expect(office.has_config?(:calendar)).to be_truthy
+      expect(office.has_config?(:weather)).to be_falsey
     end
   end
 

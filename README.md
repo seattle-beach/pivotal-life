@@ -33,7 +33,7 @@ To run the dashboard you will need a `.env` file with various tokens and keys.  
 
 First, target the pivotal-life app on the public Cloud Foundry deployment:
 
-    $ cf target api.run.pivotal.io
+    $ cf api api.run.pivotal.io
 
 Then log in to Cloud Foundry:
  

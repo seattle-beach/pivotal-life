@@ -8,8 +8,8 @@ describe CitibikeFetcher, :vcr => true do
 
     it 'returns the n closest stations' do
       returned_stations.map! { |station| station[:id] }
-      returned_stations.should include 168
-      returned_stations.should_not include 540
+      expect(returned_stations).to include 168
+      expect(returned_stations).not_to include 540
     end
   end
 end
