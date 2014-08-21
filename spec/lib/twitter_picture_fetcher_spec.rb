@@ -14,23 +14,24 @@ describe TwitterPictureFetcher , :vcr => true do
     it 'returns a twitter api specified amount of urls' do
       urls = @pic_fetcher.get_picture_urls_by_hashtag '#pivotal'
       expected = [
-        "http://t.co/B9OYsh0Ly1",
-        "http://t.co/B9OYsh0Ly1",
-        "http://t.co/NpV8jdiiFG",
-        "http://t.co/SQVPLHNbVa",
-        "http://t.co/342BbwknbD",
-        "http://t.co/UvFza7m6xc",
-        "http://t.co/HSFo5kFHmI",
-        "http://t.co/9B7j8YQJuX",
-        "http://t.co/WG5vaYOzTs",
-        "http://t.co/WG5vaYOzTs",
-        "http://t.co/B9OYsh0Ly1",
-        "http://t.co/B9OYsh0Ly1",
-        "http://t.co/B9OYsh0Ly1",
-        "http://t.co/W7gmkIy8YX",
-        "http://t.co/3F8FT8WoAK",
-        "http://t.co/GUy8WzrNTI",
-        "http://t.co/GUy8WzrNTI"
+        "http://pbs.twimg.com/media/Bvo63KoIIAArD7M.jpg",
+        "http://pbs.twimg.com/media/Bvao_7_IgAEN-GO.jpg",
+        "http://pbs.twimg.com/media/Bvao_7_IgAEN-GO.jpg",
+        "http://pbs.twimg.com/media/Bvf5d2zIEAE1Fjj.jpg",
+        "http://pbs.twimg.com/media/Bvf0mcCIIAA-v1A.png",
+        "http://pbs.twimg.com/media/BvfgYQ8CIAEdD6m.png",
+        "http://pbs.twimg.com/media/Bvb_2XqCcAEwWip.jpg",
+        "http://pbs.twimg.com/media/BvbpVaUIEAAHVPx.png",
+        "http://pbs.twimg.com/media/BvbQ2WdIAAIqrUe.jpg",
+        "http://pbs.twimg.com/media/Bva5cMNIgAII7OL.jpg",
+        "http://pbs.twimg.com/media/Bva5cMNIgAII7OL.jpg",
+        "http://pbs.twimg.com/media/Bvao_7_IgAEN-GO.jpg",
+        "http://pbs.twimg.com/media/Bvao_7_IgAEN-GO.jpg",
+        "http://pbs.twimg.com/media/Bvao_7_IgAEN-GO.jpg",
+        "http://pbs.twimg.com/media/BvYphshIIAADQpE.jpg",
+        "http://pbs.twimg.com/media/BvWL15TIMAASHnK.jpg",
+        "http://pbs.twimg.com/media/BvGUAm3IEAAKR0o.png",
+        "http://pbs.twimg.com/media/BvGUAm3IEAAKR0o.png"
       ]
       expect(urls).to eq expected
     end
