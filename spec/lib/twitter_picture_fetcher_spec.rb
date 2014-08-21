@@ -2,7 +2,13 @@ require 'spec_helper'
 
 describe TwitterPictureFetcher , :vcr => true do
   before :each do
-    @pic_fetcher = TwitterPictureFetcher.new
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = 'redacted'
+      config.consumer_secret     = 'redacted'
+      config.access_token        = 'redacted'
+      config.access_token_secret = 'redacted'
+    end
+    @pic_fetcher = TwitterPictureFetcher.new client
   end
   describe '.get_picture_urls_by_hashtag' do
     it 'returns a twitter api specified amount of urls' do
@@ -31,11 +37,6 @@ describe TwitterPictureFetcher , :vcr => true do
     it 'returns an empty array for no results' do
       urls = @pic_fetcher.get_picture_urls_by_hashtag '#noonehasusedthisyet'
       expect(urls).to eq []
-    end
-    it 'can be created with a Twitter::Rest:Client object' do
-      client = Object.new
-      pic_fetcher = TwitterPictureFetcher.new client
-      expect(pic_fetcher.client).to eq client
     end
   end
 end

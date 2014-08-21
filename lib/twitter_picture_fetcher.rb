@@ -12,7 +12,7 @@ end
 
 class TwitterPictureFetcher
   attr_accessor :client
-  def initialize client=DefaultClient
+  def initialize client
     self.client = client
   end
   def get_picture_urls_by_hashtag hashtag
