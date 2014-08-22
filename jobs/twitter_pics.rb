@@ -7,7 +7,6 @@ Dotenv.load
 SCHEDULER.every '10m', :first_in => 0 do |job|
   begin
     hashtag = ENV['TWITTER_PICTURE_HASHTAG'] || "pivotallife"
-    puts "hashtag #{hashtag}"
     picture_urls = TwitterPictureFetcher.new(DefaultClient).get_picture_urls_by_hashtag(hashtag)
 
     if picture_urls
