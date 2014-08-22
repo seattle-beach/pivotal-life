@@ -9,10 +9,17 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 // ----------------------------------------------------------------------------
 // Widget-comment styles
 // ----------------------------------------------------------------------------
-.widget-comments {
+.widget-twitter-pictures {
 
   background-color: $background-color;
 
+  .twitter-picture-container {
+  }
+
+  img {
+    max-width: 670px;
+    max-height: 470px;
+  }
   .title {
     color: $title-color;
     margin-bottom: 15px;
