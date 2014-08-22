@@ -14,7 +14,7 @@ http_interactions:
       Authorization:
       - OAuth oauth_consumer_key="redacted", oauth_nonce="redacted",
         oauth_signature="redacted", oauth_signature_method="HMAC-SHA1",
-        oauth_timestamp="1408714675", oauth_token="redacted",
+        oauth_timestamp="1408718177", oauth_token="redacted",
         oauth_version="1.0"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -26,22 +26,22 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
       Content-Length:
-      - '232'
+      - '235'
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Fri, 22 Aug 2014 13:37:57 GMT
+      - Fri, 22 Aug 2014 14:36:17 GMT
       Expires:
       - Tue, 31 Mar 1981 05:00:00 GMT
       Last-Modified:
-      - Fri, 22 Aug 2014 13:37:57 GMT
+      - Fri, 22 Aug 2014 14:36:17 GMT
       Pragma:
       - no-cache
       Server:
       - tfe_b
       Set-Cookie:
-      - guest_id=v1%3A140871467724854110; Domain=.twitter.com; Path=/; Expires=Sun,
-        21-Aug-2016 13:37:57 UTC
+      - guest_id=v1%3A140871817736670540; Domain=.twitter.com; Path=/; Expires=Sun,
+        21-Aug-2016 14:36:17 UTC
       - lang=en
       Status:
       - 200 OK
@@ -56,16 +56,16 @@ http_interactions:
       X-Rate-Limit-Limit:
       - '180'
       X-Rate-Limit-Remaining:
-      - '176'
+      - '174'
       X-Rate-Limit-Reset:
-      - '1408714857'
+      - '1408718456'
       X-Transaction:
-      - c243befefeee49f3
+      - 98b89f791dabf18d
       X-Xss-Protection:
       - 1; mode=block
     body:
       encoding: UTF-8
-      string: '{"statuses":[],"search_metadata":{"completed_in":0.005,"max_id":502811844625858560,"max_id_str":"502811844625858560","query":"%23%23noonehasusedthisyet+filter%3Aimages","refresh_url":"?since_id=502811844625858560&q=%23%23noonehasusedthisyet%20filter%3Aimages&result_type=recent&include_entities=1","count":100,"since_id":0,"since_id_str":"0"}}'
+      string: '{"statuses":[],"search_metadata":{"completed_in":0.004,"max_id":502826526027837441,"max_id_str":"502826526027837441","query":"%23%23noonehasusedthisyet+filter%3Aimages","refresh_url":"?since_id=502826526027837441&q=%23%23noonehasusedthisyet%20filter%3Aimages&result_type=recent&include_entities=1","count":100,"since_id":0,"since_id_str":"0"}}'
     http_version:
-  recorded_at: Fri, 22 Aug 2014 13:37:56 GMT
+  recorded_at: Fri, 22 Aug 2014 14:36:17 GMT
 recorded_with: VCR 2.9.2
