@@ -10,7 +10,6 @@ SCHEDULER.every '1d', first_in: 0 do
 
   offices.each do |office|
     send_event("pivot_faces_#{office.code}", {
-      new_faces: NewFacesFetcher.new(pivots_datasource)[office.config["name"]],
       random_faces: RandomFacesFetcher.new(pivots_datasource)[office.config["name"]]
     })
   end

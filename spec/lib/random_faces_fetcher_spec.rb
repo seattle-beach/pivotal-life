@@ -14,10 +14,10 @@ describe RandomFacesFetcher do
   describe '#[]' do
     let(:fetcher) { RandomFacesFetcher.new(pivots_url) }
 
-    it 'returns a random not new Pivot from a given location' do
+    it 'returns a random Pivot from a given location' do
       first_names = []
       fetcher['San Francisco'].each {|hash| first_names << hash[:first_name] }
-      expect(first_names).to match_array(%w[Aaron Aaron])
+      expect(first_names).to match_array(%w[Aaron Aaron Elana Molly Stuff Stuff1 Stuff2 Stuff3 Stuff4 Stuff5 Stuff6 Stuff7])
     end
   end
 end

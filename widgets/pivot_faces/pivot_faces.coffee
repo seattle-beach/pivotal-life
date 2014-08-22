@@ -4,20 +4,16 @@ class Dashing.PivotFaces extends Dashing.Widget
     @randomOrNewPivot = 1
     @currentNewFaceIdx = 0
     @currentRandomFaceIdx = -1
-    setInterval(@rotate, 30000)
+    setInterval(@rotate, 10000)
 
 
   onData: (data) =>
     @set('item', data.new_faces[0])
 
   rotate: =>
-    if (@randomOrNewPivot % 2 == 0) then @swapNewFace() else @swapRandomFace()
+    @swapRandomFace()
 
     @randomOrNewPivot++
-
-  swapNewFace: ->
-    @currentNewFaceIdx = ((@currentNewFaceIdx + 1) % @get('new_faces').length)
-    @set('item', @get('new_faces')[@currentNewFaceIdx])
 
   swapRandomFace: ->
     @currentRandomFaceIdx = ((@currentRandomFaceIdx + 1) % @get('random_faces').length)
