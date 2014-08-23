@@ -6,3 +6,9 @@ applications:
   host: pivotallabs.com
   domain: life
   path: .
+- name: pivotal-life-staging
+  memory: 512M
+  instances: 1
+  host: cfapps.io
+  domain: pivotal-life-staging
+  path: .

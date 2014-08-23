@@ -61,13 +61,13 @@ Once you are logged in to Cloud Foundry, per above, do the following:
 
 ### Staging
 
-    $ cf push -f staging-manifest.yml
+    $ cf push pivotal-life-staging
 
 Navigate to <http://pivotal-life-staging.cfapps.io/>
 
 ### Production
 
-    $ cf push -f manifest.yml
+    $ cf push pivotal-life
 
 Navigate to <http://pivotal-life.cfapps.io/>
 

@@ -2,9 +2,13 @@ language: ruby
 rvm:
 - 2.0.0
 deploy:
-  provider: heroku
-  api_key:
-    secure: WsDDdiQ/zxuGBDMFMNdGszYPnulLSiHVUXnfcuH5iDQqv3IjoTpYCJ2NQaMC2oeXIiJLtBi7/wlTvvY3m/9Wp4HUSO1etUCX6Iu4AOYbMSwyJZQDXVHRfHPirh3nbq/DQYSQbalG4tRdelblrQMCYh16Re34bS6JbzAxtMZbXYE=
-  app: pivotal-life-acceptance
-  on:
-    repo: spilth/pivotal-life
+  edge: true
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  organization: pivotallabs
+  space: pivotal-life
+  app: pivotal-life-staging
+  username:
+    secure: H7DELyf1+Wi80pQIQIRsvW/firASjDIEtnrJk0o+9R8Gl6kq0ebDnHmZfsA7IFHkw12kNBjWPGaTj5xuzqCZajUbnJyLHehdnquIXg1ZvodpKBCsQ7T2yPnDxLEEv9ij8WlLGSOKQk6psIKdh5RVBFEHlhOByROGQbIXtU61qyI=
+  password:
+    secure: j7sJhYEEENGC4lclz9SPp3GkNs9MWO2ZPdELHuDeSSzl5rtrDhuYv7yChdtyWx66o4mkjgZJRkeywL4Ir2utAzE0ZzeJACyTLvdrp3CHnAK5PBn7n6YB/eVVv1pnleXV2hc7ArxNdDz1wp/8Rg0yEAtMa9OfarDV2woM/6BZ0RU=

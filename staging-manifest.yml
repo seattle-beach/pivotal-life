@@ -1,6 +1,0 @@
----
-applications:
-- name: pivotal-life-staging
-  memory: 512M
-  instances: 1
-  path: .
