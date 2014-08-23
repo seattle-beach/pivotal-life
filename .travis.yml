@@ -9,6 +9,6 @@ deploy:
   space: pivotal-life
   app: pivotal-life-staging
   username:
-    secure: H7DELyf1+Wi80pQIQIRsvW/firASjDIEtnrJk0o+9R8Gl6kq0ebDnHmZfsA7IFHkw12kNBjWPGaTj5xuzqCZajUbnJyLHehdnquIXg1ZvodpKBCsQ7T2yPnDxLEEv9ij8WlLGSOKQk6psIKdh5RVBFEHlhOByROGQbIXtU61qyI=
+    secure: cDrWv9u5K0aSv8PmRsQkmfx4ZEcIV+Xart0x+Qd77Ov3tFRBs5EAZUdG1mOFplI5+YBwoSqfXbz/69A3sZAO420rV/2Qz5pQFm/ZppxZ035ZtIQnI89nmjEmQL9aWQm1sOO09bW1cLcMIw9UaYzQQqgJ5Fd0yDzHXapX+jOTQQk=
   password:
-    secure: j7sJhYEEENGC4lclz9SPp3GkNs9MWO2ZPdELHuDeSSzl5rtrDhuYv7yChdtyWx66o4mkjgZJRkeywL4Ir2utAzE0ZzeJACyTLvdrp3CHnAK5PBn7n6YB/eVVv1pnleXV2hc7ArxNdDz1wp/8Rg0yEAtMa9OfarDV2woM/6BZ0RU=
+    secure: J1kZJ+siYZZVDIlWAoCES/YirYfxMbdXYwKZT57/pY5o06dhcECxq8bOJXMhm2c6hR/kQTfijVX+Zi2a1ViE1xGbIOwODmTXbrwAlO1PuKtrYHOs6m5zrM4k6f0yXN6vNPtWWoYqJf5jgdzhHf09VX9d2YnFjo6uMmV23B7hQco=
