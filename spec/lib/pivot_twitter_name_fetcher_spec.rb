@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe PivotalTwitterNameFetcher , :vcr => true do
+describe PivotTwitterNameFetcher , :vcr => true do
   before :each do
     credentials = {:authentication_token => 'redacted', :email => 'redacted'}
-    @name_fetcher = PivotalTwitterNameFetcher.new credentials
+    @name_fetcher = PivotTwitterNameFetcher.new credentials
 
   end
   describe '.get_twitter_names' do
