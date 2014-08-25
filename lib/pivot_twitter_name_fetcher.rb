@@ -1,6 +1,6 @@
 require 'json'
 
-class PivotalTwitterNameFetcher
+class PivotTwitterNameFetcher
   attr_accessor :pivots_url
 
   def initialize credentials
