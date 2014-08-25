@@ -24,5 +24,11 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.configure_rspec_metadata!
   c.cassette_library_dir = 'spec/fixtures/cassettes'
+  c.filter_sensitive_data('<TWITTER_CONSUMER_KEY>') { ENV['TWITTER_CONSUMER_KEY'] }
+  c.filter_sensitive_data('<TWITTER_OAUTH_TOKEN>') { ENV['TWITTER_OAUTH_TOKEN'] }
+  c.filter_sensitive_data('<TWITTER_CONSUMER_SECRET>') { ENV['TWITTER_CONSUMER_SECRET'] }
+  c.filter_sensitive_data('<TWITTER_OAUTH_SECRET>') { ENV['TWITTER_OAUTH_SECRET'] }
+  c.filter_sensitive_data('<PIVOTS_AUTH_TOKEN>') { ENV['PIVOTS_AUTH_TOKEN'] }
+  c.filter_sensitive_data('<PIVOTS_EMAIL>') { ENV['PIVOTS_EMAIL'] }
 end
 

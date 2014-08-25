@@ -1,12 +1,13 @@
 require 'spec_helper'
+require 'dotenv'
 
 describe TwitterPictureFetcher , :vcr => true do
   before :each do
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = 'redacted'
-      config.consumer_secret     = 'redacted'
-      config.access_token        = 'redacted'
-      config.access_token_secret = 'redacted'
+      config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
+      config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
+      config.access_token        = ENV['TWITTER_OAUTH_TOKEN']
+      config.access_token_secret = ENV['TWITTER_OAUTH_SECRET']
     end
     @pic_fetcher = TwitterPictureFetcher.new client
 
