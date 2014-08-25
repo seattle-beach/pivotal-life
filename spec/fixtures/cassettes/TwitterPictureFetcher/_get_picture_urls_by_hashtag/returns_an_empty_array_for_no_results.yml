@@ -12,10 +12,9 @@ http_interactions:
       User-Agent:
       - Twitter Ruby Gem 5.5.1
       Authorization:
-      - OAuth oauth_consumer_key="redacted", oauth_nonce="redacted",
-        oauth_signature="redacted", oauth_signature_method="HMAC-SHA1",
-        oauth_timestamp="1408718177", oauth_token="redacted",
-        oauth_version="1.0"
+      - OAuth oauth_consumer_key="TWITTER_CONSUMER_KEY", oauth_nonce="972e4116850fdf988c689c9b2b99c130",
+        oauth_signature="L04qprksVOzCiLA3tAIJyJn9AMU%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1408991139", oauth_token="TWITTER_OAUTH_TOKEN", oauth_version="1.0"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -26,22 +25,22 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
       Content-Length:
-      - '235'
+      - '234'
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Fri, 22 Aug 2014 14:36:17 GMT
+      - Mon, 25 Aug 2014 18:25:38 GMT
       Expires:
       - Tue, 31 Mar 1981 05:00:00 GMT
       Last-Modified:
-      - Fri, 22 Aug 2014 14:36:17 GMT
+      - Mon, 25 Aug 2014 18:25:38 GMT
       Pragma:
       - no-cache
       Server:
       - tfe_b
       Set-Cookie:
-      - guest_id=v1%3A140871817736670540; Domain=.twitter.com; Path=/; Expires=Sun,
-        21-Aug-2016 14:36:17 UTC
+      - guest_id=v1%3A140899113881446037; Domain=.twitter.com; Path=/; Expires=Wed,
+        24-Aug-2016 18:25:38 UTC
       - lang=en
       Status:
       - 200 OK
@@ -56,16 +55,16 @@ http_interactions:
       X-Rate-Limit-Limit:
       - '180'
       X-Rate-Limit-Remaining:
-      - '174'
+      - '177'
       X-Rate-Limit-Reset:
-      - '1408718456'
+      - '1408992017'
       X-Transaction:
-      - 98b89f791dabf18d
+      - c2bf39db50749c13
       X-Xss-Protection:
       - 1; mode=block
     body:
       encoding: UTF-8
-      string: '{"statuses":[],"search_metadata":{"completed_in":0.004,"max_id":502826526027837441,"max_id_str":"502826526027837441","query":"%23%23noonehasusedthisyet+filter%3Aimages","refresh_url":"?since_id=502826526027837441&q=%23%23noonehasusedthisyet%20filter%3Aimages&result_type=recent&include_entities=1","count":100,"since_id":0,"since_id_str":"0"}}'
+      string: '{"statuses":[],"search_metadata":{"completed_in":0.006,"max_id":503971403213717504,"max_id_str":"503971403213717504","query":"%23%23noonehasusedthisyet+filter%3Aimages","refresh_url":"?since_id=503971403213717504&q=%23%23noonehasusedthisyet%20filter%3Aimages&result_type=recent&include_entities=1","count":100,"since_id":0,"since_id_str":"0"}}'
     http_version:
-  recorded_at: Fri, 22 Aug 2014 14:36:17 GMT
+  recorded_at: Mon, 25 Aug 2014 18:25:40 GMT
 recorded_with: VCR 2.9.2

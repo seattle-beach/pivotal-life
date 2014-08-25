@@ -1,8 +1,9 @@
 require 'spec_helper'
+require 'dotenv'
 
 describe PivotTwitterNameFetcher , :vcr => true do
   before :each do
-    credentials = {:authentication_token => 'redacted', :email => 'redacted'}
+    credentials = {:authentication_token => (ENV['PIVOTS_AUTH_TOKEN'] || 'PIVOTS_AUTH_TOKEN') , :email => (ENV['PIVOTS_EMAIL'] || 'PIVOTS_EMAIL')}
     @name_fetcher = PivotTwitterNameFetcher.new credentials
 
   end

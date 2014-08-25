@@ -1,12 +1,13 @@
 require 'spec_helper'
+require 'dotenv'
 
 describe TwitterPictureFetcher , :vcr => true do
   before :each do
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = 'redacted'
-      config.consumer_secret     = 'redacted'
-      config.access_token        = 'redacted'
-      config.access_token_secret = 'redacted'
+      config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
+      config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
+      config.access_token        = ENV['TWITTER_OAUTH_TOKEN']
+      config.access_token_secret = ENV['TWITTER_OAUTH_SECRET']
     end
     @pic_fetcher = TwitterPictureFetcher.new client
 
@@ -15,7 +16,13 @@ describe TwitterPictureFetcher , :vcr => true do
     it 'returns a twitter api specified amount of urls, removing duplicates' do
       urls = @pic_fetcher.get_picture_urls_by_hashtag '#pivotal'
       expected = [
+        "http://pbs.twimg.com/media/Bv25la1CcAEFltV.jpg",
+        "http://pbs.twimg.com/media/Bv2zDNaCIAEjGt-.jpg",
+        "http://pbs.twimg.com/media/Bv00tE0IAAApwNt.jpg",
         "http://pbs.twimg.com/media/Bvo63KoIIAArD7M.jpg",
+        "http://pbs.twimg.com/media/BvxCeP8IcAA0rRL.jpg",
+        "http://pbs.twimg.com/media/BvxDK8nIIAA72VF.jpg",
+        "http://pbs.twimg.com/media/BuabBEhIYAAFYKb.jpg",
         "http://pbs.twimg.com/media/Bvao_7_IgAEN-GO.jpg",
         "http://pbs.twimg.com/media/Bvf5d2zIEAE1Fjj.jpg",
         "http://pbs.twimg.com/media/Bvf0mcCIIAA-v1A.png",
@@ -25,8 +32,7 @@ describe TwitterPictureFetcher , :vcr => true do
         "http://pbs.twimg.com/media/BvbQ2WdIAAIqrUe.jpg",
         "http://pbs.twimg.com/media/Bva5cMNIgAII7OL.jpg",
         "http://pbs.twimg.com/media/BvYphshIIAADQpE.jpg",
-        "http://pbs.twimg.com/media/BvWL15TIMAASHnK.jpg",
-        "http://pbs.twimg.com/media/BvGUAm3IEAAKR0o.png",
+        "http://pbs.twimg.com/media/BvWL15TIMAASHnK.jpg"
       ]
       expect(urls).to eq expected
 
