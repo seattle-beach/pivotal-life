@@ -1,11 +1,5 @@
 ---
 applications:
-- name: pivotal-life
-  memory: 512M
-  instances: 1
-  host: pivotallabs.com
-  domain: life
-  path: .
 - name: pivotal-life-staging
   memory: 512M
   instances: 1
