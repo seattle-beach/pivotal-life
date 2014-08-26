@@ -3,6 +3,6 @@ applications:
 - name: pivotal-life-staging
   memory: 512M
   instances: 1
-  host: cfapps.io
-  domain: pivotal-life-staging
+  domain: cfapps.io
+  host: pivotal-life-staging
   path: .
