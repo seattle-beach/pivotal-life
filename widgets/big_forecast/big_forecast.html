@@ -1,0 +1,8 @@
+<div class="widget-title" data-bind="widget_title | raw"></div>
+
+<div class="flex-container">
+  <canvas id="current_icon" class="forecast-icon flex-item" width="285px" height="285px"></canvas>
+  <div class="temp flex-item" data-bind="current_temp | append '&deg;'"></div>
+</div>
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>

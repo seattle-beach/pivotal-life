@@ -1,4 +1,4 @@
-class Dashing.Clock extends Dashing.Widget
+class Dashing.SimpleClock extends Dashing.Widget
 
   ready: ->
     setInterval(@showTime, 500)
@@ -6,4 +6,4 @@ class Dashing.Clock extends Dashing.Widget
   showTime: =>
     now = moment()
     @set('time', now.format('h:mm A');)
-    @set('date', now.format('ddd MMM D, YYYY');)
+    @set('date', now.format('MMM D');)

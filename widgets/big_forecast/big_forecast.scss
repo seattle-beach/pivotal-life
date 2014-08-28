@@ -1,0 +1,36 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #55c4eb;
+
+$full-color:  rgba(255, 255, 255, 1);
+$light-color: rgba(255, 255, 255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-forecast styles
+// ----------------------------------------------------------------------------
+.widget-big-forecast {
+
+  background-color: $background-color;
+  padding-top: 15px !important;
+
+  .temp {
+    color: $full-color;
+    font-size: 200px;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: center;
+  }
+
+  .flex-item {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+  }
+}
