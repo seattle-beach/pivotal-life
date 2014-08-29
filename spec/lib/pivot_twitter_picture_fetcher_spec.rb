@@ -10,8 +10,8 @@ describe PivotTwitterPictureFetcher do
   let(:pivot_twitter_names) { ["miked", "davidm", "timj" ] }
 
   let(:expected_pivot_picture_results) { [
-    { url: "http://pbs.twimg.com/media/stuff.jpg", user_name: "miked" },
-    { url: "http://pbs.twimg.com/media/cooler_stuff.jpg", user_name: "davidm" }
+    { url: "http://pbs.twimg.com/media/stuff.jpg", user_name: "miked", hashtag: "pivotallife" },
+    { url: "http://pbs.twimg.com/media/cooler_stuff.jpg", user_name: "davidm", hashtag: "pivotallife" }
   ] }
 
   before :each do
