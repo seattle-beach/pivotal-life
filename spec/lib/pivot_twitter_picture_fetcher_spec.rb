@@ -9,9 +9,9 @@ describe PivotTwitterPictureFetcher do
 
   let(:pivot_twitter_names) { ["miked", "davidm", "timj" ] }
 
-  let(:expected_pivot_picture_urls_results) { [
-    "http://pbs.twimg.com/media/stuff.jpg",
-    "http://pbs.twimg.com/media/cooler_stuff.jpg"
+  let(:expected_pivot_picture_results) { [
+    { url: "http://pbs.twimg.com/media/stuff.jpg", user_name: "miked" },
+    { url: "http://pbs.twimg.com/media/cooler_stuff.jpg", user_name: "davidm" }
   ] }
 
   before :each do
@@ -24,7 +24,7 @@ describe PivotTwitterPictureFetcher do
     it 'only includes picture urls from pivots' do
       allow(@name_fetcher).to receive(:get_twitter_names).and_return(pivot_twitter_names)
       allow(@picture_fetcher).to receive(:get_picture_urls_by_hashtag).with('pivotallife').and_return(twitter_results)
-      expect(@pivot_twitter_picture_fetcher.get_pivot_picture_urls_by_hashtag('pivotallife')).to eq(expected_pivot_picture_urls_results)
+      expect(@pivot_twitter_picture_fetcher.get_pivot_picture_urls_by_hashtag('pivotallife')).to eq(expected_pivot_picture_results)
     end
   end
 end

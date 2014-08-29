@@ -8,16 +8,17 @@ class Dashing.TwitterPictures extends Dashing.Widget
 
   onData: (data) ->
     @currentIndex = 0
+    @set('item', data.tweets[@currentIndex])
 
   startCarousel: ->
     setInterval(@nextPicture, 8000)
 
   nextPicture: =>
-    urls = @get('urls')
-    if urls
+    tweets = @get('tweets')
+    if tweets
       @pictureElem.fadeOut =>
-        @currentIndex = (@currentIndex + 1) % urls.length
-        @set 'url', urls[@currentIndex]
+        @currentIndex = (@currentIndex + 1) % tweets.length
+        @set 'item', tweets[@currentIndex]
         @pictureElem.fadeIn()
 
 
