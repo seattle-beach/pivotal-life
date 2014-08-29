@@ -1,5 +1,4 @@
 require 'json'
-require 'pry'
 
 class PivotTwitterNameFetcher
   attr_accessor :pivots_url
