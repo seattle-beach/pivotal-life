@@ -1,14 +1,15 @@
-<div data-id="calendar_events_nyc" data-pre="0" style="background-color: #07484A; vertical-align:top;" class="widget widget-event-list">
+<div data-id="event_list_nyc" data-pre="0" style="background-color: #07484A;" class="widget widget-event-list">
   <div class="event-list-group">
     <h3 class="event-list-header">Today</h3>
-    <h4 class="event-list-title">Language Games</h4>
-    <h4 class="event-list-title">Board games</h4>
-    <h4 class="event-list-title">Machine Learning with Paul Dix (monthly)</h4>
+    <div data-foreach-item="events_today">
+      <h4 class="event-list-title" data-bind='item.title'></h4>
+    </div>
   </div>
+
   <div class="event-list-group">
     <h3 class="event-list-header">Upcoming</h3>
-    <h4 class="event-list-title">Developers of Catan</h4>
-    <h4 class="event-list-title">D3</h4>
-    <h4 class="event-list-title">Intermezzo</h4>
+    <div data-foreach-item="events_upcoming">
+      <h4 class="event-list-title" data-bind='item.title'></h4>
+    </div>
   </div>
 </div>

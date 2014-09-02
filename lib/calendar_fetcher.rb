@@ -31,6 +31,7 @@ class CalendarFetcher
     end
 
     @data = events
+    @data.sort! { |a, b| a[:when_start_raw] <=> b[:when_start_raw] }
   end
 
   def data

@@ -2,7 +2,6 @@ class Dashing.Calendar extends Dashing.Widget
 
   @accessor 'updatedAtMessage', Util.updatedAtShortTime
 
-
   ready: =>
     @index = 0
     setInterval(@updateEvent, 15000)
@@ -12,6 +11,7 @@ class Dashing.Calendar extends Dashing.Widget
     @updateEvent()
 
   defaultEvent: {title: 'Nothing left to do', body: 'but go drink', where: 'beers in the fridge'}
+
   updateEvent: =>
     event = @events[@index++ % @events.length] || @defaultEvent
     diff = moment(event.when_start_raw*1000).diff(moment())

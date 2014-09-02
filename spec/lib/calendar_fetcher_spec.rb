@@ -13,8 +13,13 @@ describe CalendarFetcher do
     stub_request(:get, url).to_return(body: File.read('spec/fixtures/calendar.xml'))
   end
 
+  it 'fetches events in sorted order by starting date ascending' do
+    expect(fetcher.data.first[:title]).to eq "Tech videos"
+    expect(fetcher.data.last[:title]).to eq "Whiskey Club"
+  end
+
   it 'fetches events between now and the next Sunday (even if today is a Sunday)' do
-    expect(fetcher.data).to eq [
+    expect(fetcher.data).to match_array [
       {:title => "Whiskey Club",
        :body => "",
        :calendar => "",
