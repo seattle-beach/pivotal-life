@@ -18,8 +18,10 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 
   img {
     max-width: 670px;
-    max-height: 470px;
+    max-height: 400px;
+    padding-bottom: 0.7em;
   }
+
   .title {
     color: $title-color;
     margin-bottom: 15px;
