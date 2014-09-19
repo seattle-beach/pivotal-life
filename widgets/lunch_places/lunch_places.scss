@@ -9,8 +9,8 @@ $background-color:  #7FAF1B;
   color: white;
 
   h2 {
-    font-size: 2.5rem;
-    margin:20px 0;
+    font-size: 3rem;
+    margin:40px 0;
   }
 
   span {
@@ -19,5 +19,9 @@ $background-color:  #7FAF1B;
       color: #FFCC00;
  
     }
+  }
+  p.info {
+    font-size: 1rem;
+    color: #666;
   }
 }
