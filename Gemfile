@@ -8,6 +8,9 @@ gem 'activesupport'
 gem 'nokogiri'
 gem 'rake'
 gem 'twitter'
+gem 'yelp'
+gem 'jwt', '~> 0.1.5'
+gem 'google-api-client'
 
 # so our Rakefile works everywhere
 gem 'rspec'
