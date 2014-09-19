@@ -10,6 +10,7 @@ gem 'activesupport'
 gem 'nokogiri'
 gem 'rake'
 gem 'twitter'
+gem 'yelp'
 
 # so our Rakefile works everywhere
 gem 'rspec'

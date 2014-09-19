@@ -6,7 +6,8 @@ class ForecastFetcher
   DEFAULT_LOCATIONS = {
     sf: { lat: 40.740673, lon: -73.994808, units: 'us' },
     pa: { lat: 37.394555, lon: -122.148039, units: 'us' },
-    nyc: { lat: 40.740673, lon: -73.994808, units: 'us' }
+    nyc: { lat: 40.740673, lon: -73.994808, units: 'us' },
+    to: { lat: 43.649932, lon: -79.375756, units: 'si'}
   }
 
   def initialize(key, locations = DEFAULT_LOCATIONS)
