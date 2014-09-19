@@ -1,0 +1,9 @@
+places:
+  - name: Chipotle
+    lat: 
+    lon:
+    yelp_biz: chipotle-mexican-grill-toronto
+  - name: St. Lawrence Market
+    lat:
+    lon: 
+    yelp_biz: st-lawrence-market-toronto
