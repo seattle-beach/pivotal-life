@@ -24,6 +24,5 @@ SCHEDULER.every '30s', first_in: 0 do
   else
     data['wittyremark'] = "Don't miss your 1pm meeting!"
   end
-
   send_event('lunch_places_to', data)
 end
