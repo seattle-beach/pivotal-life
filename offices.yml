@@ -6,7 +6,7 @@ nyc:
 sf:
   name: San Francisco
   calendar:
-    url: http://www.google.com/calendar/feeds/pivotallabs.com_cdjvcp4tfaum7m0kie2na4dpgc%40group.calendar.google.com/public/full
+    url: http://www.google.com/calendar/feeds/pivotallabs.com_cdjvcp4tfaum7m0kie2na4dpgc%40group.calendar.google.com/public/full'
 london:
   name: London
   calendar:
