@@ -19,6 +19,6 @@ class PivotTwitterNameFetcher
       raise result['error']
     end
 
-    result.map{|x| x["twitter"]}.compact.delete_if(&:empty?)
+    result.map{|x| x["twitter"].downcase}.compact.delete_if(&:empty?)
   end
 end
