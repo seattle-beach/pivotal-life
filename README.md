@@ -6,6 +6,11 @@ A dashboard for Pivots at the office.
 
 ## Requirements
 
+### Credentials
+You will need to belong to the PWS `pivotallabs` org and have access to the `pivotal-life` space. To request access, email bkelly@pivotal.io or ask to be added by anyone who has access.
+
+
+### Software
 - [Ruby](https://www.ruby-lang.org/en/)
 - [Bundler](http://bundler.io/)
 - [NodeJS](http://nodejs.org/) & [npm](https://www.npmjs.org/)
@@ -16,13 +21,15 @@ On Mac you can install NodeJs, PhantomJs and CloudFoundry with the following:
 
     $ brew install node
     $ brew install phantomjs
+    $ brew tap pivotal/tap # Add pivotal tap if it's not already there
     $ brew install cloudfoundry-cli
+
 
 ## Setup
 
 To checkout and run the project locally:
 
-    $ git clone git@github.com:spilth/pivotal-life.git
+    $ git clone git@github.com:pivotal/pivotal-life.git
     $ cd pivotal-life
     $ bundle
     $ npm install -g coffee-script
@@ -39,9 +46,8 @@ Then log in to Cloud Foundry:
  
     $ cf login
 
-Select the `pivotallabs` org.
+If you belong to more than one org, select the `pivotallabs` org.
 
-Note: You will need to belong to the `pivotallabs` org and have access to the `pivotal-life` space.
 
 Next, build a `.env` file using the Cloud Foundry settings:
    
@@ -53,7 +59,8 @@ Now run the local server:
     
     $ bundle exec dashing start
 
-Then navigate to <http://localhost:3030/>.
+Then navigate to <http://localhost:3030/> for the default or <http://localhost:3030/nyc> to see NYC.
+Login to basic auth using the AUTH_USERNAME and AUTH_PASSWORD in the `.env` file.
 
 ## Deploying
 
