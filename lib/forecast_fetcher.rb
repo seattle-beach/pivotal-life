@@ -6,6 +6,7 @@ class ForecastFetcher
   DEFAULT_LOCATIONS = {
     sf: { lat: 40.740673, lon: -73.994808, units: 'us' },
     pa: { lat: 37.394555, lon: -122.148039, units: 'us' },
+    london: { lat: 51.5072, lon: 0.1275, units: 'uk' },
     nyc: { lat: 40.740673, lon: -73.994808, units: 'us' }
   }
 
