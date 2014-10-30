@@ -19,10 +19,15 @@ describe ForecastFetcher do
     'https://api.forecast.io/forecast/FAKE-API-KEY/40.740673,-73.994808?units=us'
   end
 
+  let(:london_forecast_url) do
+    'https://api.forecast.io/forecast/FAKE-API-KEY/51.5072,0.1275?units=uk'
+  end
+
   before do
     stub_request(:get, nyc_forecast_url).to_return(:body => File.read('spec/fixtures/forecast/nyc.json'))
     stub_request(:get, pa_forecast_url).to_return(:body => File.read('spec/fixtures/forecast/palo-alto.json'))
     stub_request(:get, sf_forecast_url).to_return(:body => File.read('spec/fixtures/forecast/sf.json'))
+    stub_request(:get, london_forecast_url).to_return(:body => File.read('spec/fixtures/forecast/london.json'))
   end
 
   it 'collects forecast data for each location' do
