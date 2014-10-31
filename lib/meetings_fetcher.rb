@@ -38,7 +38,9 @@ class MeetingsFetcher
       parameters: {
         calendarId: calendar_id,
         timeMax: (Time.now + (60*60*24)).utc.iso8601,
-        timeMin: Time.now.utc.iso8601
+        timeMin: Time.now.utc.iso8601,
+        singleEvents: true,
+        orderBy: "startTime"
       },
       headers: {'Content-Type' => 'application/json'}
     })
