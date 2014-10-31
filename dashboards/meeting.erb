@@ -1,7 +1,11 @@
 <% content_for :title do %>Meeting Rooms<% end %>
 <div id="currentRoom">
   <% case params[:room]
-  when "QueensPark" %>
+  when nil %>
+  Queen's Park
+  <% when "" %>
+  Queen's Park
+  <% when "QueensPark" %>
   Queen's Park
   <% when "StPatrick" %>
   St. Patrick
@@ -17,10 +21,4 @@
   <%= params[:room] %>
   <% end %>
 </div>
-<div class="gridster">
-  <ul>
-    <li>
-      <div data-id=<%= params[:room].empty? ? 'QueensPark' : params[:room] %> data-view="Meetings"></div>
-    </li>
-  </ul>
-</div>
+<div data-id=<%= params[:room].nil? || params[:room].empty? ? 'QueensPark' : params[:room] %> data-view="Meetings"></div>
