@@ -1,0 +1,119 @@
+$background-color:  #343434;
+
+.widget-event {
+}
+
+#select {
+  position: absolute;
+  float:left;
+}
+
+#selectStyle {
+  background-color: white;
+  border-radius: 7px;
+	text-indent: 0.01px;
+  text-overflow: "";
+	color: #000;
+  border: 0 !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+#roomSelect {
+  @extend #selectStyle;
+  padding: 8px;
+  width: 170px;
+  height: 40px;
+  font-size: 20px;
+  background: white url(/assets/select-arrow.png) no-repeat 95% center;
+}
+
+#roomSwitch {
+  @extend #selectStyle;
+  padding: 5px;
+  width: 80px;
+  height: 30px;
+}
+
+#roomSwitch:hover {
+  background-color: rgba(255,255,255,0.7);
+}
+
+.table {
+  top: 0; bottom: 0; left: 0; right: 0;
+  padding: 10px;
+}
+
+.cell {
+  position: relative;
+  display:inline-block;
+  vertical-align: top;
+  height: 150px;
+  width: 450px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  background-color: #1AA498;
+  border: 2px solid white;
+}
+
+.cell:hover {
+  background-color: #00786e;
+}
+
+.author {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.time {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  width: 90%;
+  border-top: 1px dotted white;
+  margin: auto;
+}
+
+.status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60px;
+  width: 150px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.status:hover #hoverbar {
+  visibility: visible;
+}
+
+.green {
+  @extend .status;
+  background-color: green;
+}
+
+.yellow {
+  @extend .status;
+  background: #fbec79;
+  color: #3c3d42;
+}
+
+.red {
+  @extend .status;
+  background: #BD2F00;
+}
+
+#booking {
+  // text-decoration: underline;
+  background-color: white;
+  width: 250px;
+  border-radius: 7px;
+  color: black;
+  margin: auto;
+}
