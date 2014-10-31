@@ -13,7 +13,6 @@ class MeetingsFetcher
       application_version: '1.0.0'
     )
 
-
     @client.authorization.client_id=ENV['GOOGLE_CLIENT_ID']
     @client.authorization.client_secret=ENV['GOOGLE_CLIENT_SECRET']
     @client.authorization.refresh_token=ENV['GOOGLE_REFRESH_TOKEN']
@@ -70,9 +69,9 @@ class MeetingsFetcher
   end
 
   def get_room_status(events)
-    green =  { text: 'Available - Room is not Booked', style: 'green' }
-    yellow = { text: 'Reserved - A Meeting will Start Soon', style: 'yellow' }
-    red =    { text: 'In Use - Room is Booked', style: 'red' }
+    green =  { text: 'Available', style: 'green' }
+    yellow = { text: 'Reserved', style: 'yellow' }
+    red =    { text: 'In Use', style: 'red' }
 
     status = green
     current_time = Time.now.to_i
