@@ -3,9 +3,6 @@ require 'google/api_client/client_secrets'
 require 'google/api_client/auth/installed_app'
 
 #TODO: Request id and secret from a different account
-CLIENT_ID = '551647463843-ujkp9ouirdpk34e25mpe43i749piprq5.apps.googleusercontent.com'
-CLIENT_SECRET = 'rK5_AGwSfnnST3LDMn5-Aw6E'
-REFRESH_TOKEN = '1/SLD1by-eSeTslM9vDB0Bt0xTCFASPj7aSl6LixmUi0I'
 SCOPE = ['https://www.googleapis.com/auth/calendar']
 
 class MeetingsFetcher
@@ -16,9 +13,10 @@ class MeetingsFetcher
       application_version: '1.0.0'
     )
 
-    @client.authorization.refresh_token=REFRESH_TOKEN
-    @client.authorization.client_id=CLIENT_ID
-    @client.authorization.client_secret=CLIENT_SECRET
+
+    @client.authorization.client_id=ENV['GOOGLE_CLIENT_ID']
+    @client.authorization.client_secret=ENV['GOOGLE_CLIENT_SECRET']
+    @client.authorization.refresh_token=ENV['GOOGLE_REFRESH_TOKEN']
 
     @calendar = @client.discovered_api('calendar', 'v3')
   end
@@ -55,7 +53,7 @@ class MeetingsFetcher
       temp = {
         title: event['visibility']=='private' ? 'Private' : event['summary'],
         location: event['location'].nil? ? '' : event['location'],
-        organizer: event['organizer'].nil? ? '' : event['organizer']['displayName'],
+        organizer: event['organizer'].nil? ? 'Anonymous' : event['organizer']['displayName'],
         organizer_email: event['organizer'].nil? ? '' : event['organizer']['email'],
         start: Time.parse(event['start']['dateTime']).to_i,
         end: Time.parse(event['end']['dateTime']).to_i,
@@ -70,9 +68,10 @@ class MeetingsFetcher
   end
 
   def get_room_status(events)
-    green =  { text: 'Available', style: 'green' }
-    yellow = { text: 'Reserved', style: 'yellow' }
-    red =    { text: 'In Use', style: 'red' }
+    green =  { text: 'Available - Room is not Booked', style: 'green' }
+    yellow = { text: 'Reserved - A Meeting will Start Soon', style: 'yellow' }
+    red =    { text: 'In Use - Room is Booked', style: 'red' }
+
     status = green
     current_time = Time.now.to_i
     warning_time = 5*60

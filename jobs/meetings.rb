@@ -1,6 +1,6 @@
 @meetings = MeetingsFetcher.new()
 
-SCHEDULER.every '10s', allow_overlapping: false do
+SCHEDULER.every '1m', allow_overlapping: false do
   @meetings = MeetingsFetcher.new() if @meetings.nil?
   @meetings.refresh_access_token
   #send_event('Museum', @meetings.get_summarized_events('room_museum@pivotallabs.com'))
