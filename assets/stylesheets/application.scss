@@ -264,12 +264,3 @@ h3 {
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
-
-#currentRoom {
-  position: absolute;
-  display: inline-block;
-  bottom: 0;
-  right: 0;
-  padding-right: 50px;
-  font-size: 150px;
-}
