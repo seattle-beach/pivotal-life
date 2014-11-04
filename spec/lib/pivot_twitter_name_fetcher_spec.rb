@@ -10,10 +10,11 @@ describe PivotTwitterNameFetcher do
     stub_request(:get, @name_fetcher.pivots_url).to_return(:body => File.read('spec/fixtures/pivots_new_and_old_users.json'))
   end
   describe '.get_twitter_names' do
-    it 'returns a list of downcased twitter names for all pivots who have provided their name' do
+    it 'returns a list of downcased twitter names for all pivots who have provided their name and adds pivotallife account' do
       names = @name_fetcher.get_twitter_names
       expect(names[0]).to eq "ajarecki"
-      expect(names[-1]).to eq "sblarg7"
+      expect(names[-2]).to eq "sblarg7"
+      expect(names[-1]).to eq "pivotallife"
     end
 
     it 'contains no nil or empty string values' do
