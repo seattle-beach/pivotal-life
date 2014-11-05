@@ -59,7 +59,7 @@ class MeetingsFetcher
         organizer_email: event['organizer'].nil? ? '' : event['organizer']['email'],
         start: Time.parse(event['start']['dateTime']).to_i,
         end: Time.parse(event['end']['dateTime']).to_i,
-        time: Time.parse(event['start']['dateTime']).strftime("%b %d, %I:%M %p")+" - "+Time.parse(event['end']['dateTime']).strftime("%I:%M %p"),
+        time: Time.parse(event['start']['dateTime']).in_time_zone("Eastern Time (US & Canada)").strftime("%b %d, %I:%M %p")+" - "+Time.parse(event['end']['dateTime']).in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p"),
         link: event['htmlLink'].nil? ? '#' : event['htmlLink']
       }
 
