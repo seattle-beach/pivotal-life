@@ -48,8 +48,10 @@ Then log in to Cloud Foundry:
 
 If you belong to more than one org, select the `pivotallabs` org.
 
+If you have acces to more than one space, select the `pivotal-life` space.
+
 Next, build a `.env` file using the Cloud Foundry settings:
-   
+
     $ ./populate-dotenv.sh
 
 You'll need the username and password in the generated `.env` file to visit the dashboar - it uses Basic Auth.
