@@ -2,13 +2,13 @@ language: ruby
 rvm:
 - 2.1.2
 deploy:
-  edge: true
   provider: cloudfoundry
   api: https://api.run.pivotal.io
+  username: bkelly@pivotal.io
+  password:
+    secure: PsA1Y/gyhnPZYAbnUO4pyhY2L/IF/NdBYVb4n6M0MOprwZfMRD+HdwYSsIDV3Y0LGdeF60IUSTqkMExqLo1f2t6oNLiqIP6seCkSItOjMgigWGIJOMTdI3ZNzemStWZmlZGYg4BynLuclc9lI9hXEv/s4rthN4oGarYh5i+23Zk=
   organization: pivotallabs
   space: pivotal-life
   app: pivotal-life-staging
-  username:
-    secure: cDrWv9u5K0aSv8PmRsQkmfx4ZEcIV+Xart0x+Qd77Ov3tFRBs5EAZUdG1mOFplI5+YBwoSqfXbz/69A3sZAO420rV/2Qz5pQFm/ZppxZ035ZtIQnI89nmjEmQL9aWQm1sOO09bW1cLcMIw9UaYzQQqgJ5Fd0yDzHXapX+jOTQQk=
-  password:
-    secure: J1kZJ+siYZZVDIlWAoCES/YirYfxMbdXYwKZT57/pY5o06dhcECxq8bOJXMhm2c6hR/kQTfijVX+Zi2a1ViE1xGbIOwODmTXbrwAlO1PuKtrYHOs6m5zrM4k6f0yXN6vNPtWWoYqJf5jgdzhHf09VX9d2YnFjo6uMmV23B7hQco=
+  on:
+    repo: pivotal/pivotal-life
