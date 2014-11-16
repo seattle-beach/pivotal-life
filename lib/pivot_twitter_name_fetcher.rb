@@ -9,7 +9,7 @@ class PivotTwitterNameFetcher
   attr_accessor :pivots_url
 
   def initialize credentials
-    self.pivots_url = "https://pivotalpivots2.herokuapp.com/api/users.json?email=#{credentials[:email]}&authentication_token=#{credentials[:authentication_token]}"
+    self.pivots_url = "https://pivots.pivotallabs.com/api/users.json?email=#{credentials[:email]}&authentication_token=#{credentials[:authentication_token]}"
   end
 
   def get_twitter_names
@@ -19,7 +19,7 @@ class PivotTwitterNameFetcher
       raise result['error']
     end
 
-    results = result.map{|x| x["twitter"].downcase}.compact.delete_if(&:empty?)
+    results = result.map{|x| x["twitter"].try(:downcase)}.compact.delete_if(&:empty?)
     results << 'pivotallife'
 
     results
