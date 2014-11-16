@@ -48,7 +48,6 @@ Then log in to Cloud Foundry:
 
 If you belong to more than one org, select the `pivotallabs` org.
 
-
 Next, build a `.env` file using the Cloud Foundry settings:
    
     $ ./populate-dotenv.sh
