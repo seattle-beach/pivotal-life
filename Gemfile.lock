@@ -95,7 +95,7 @@ GEM
     multipart-post (1.2.0)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
-    phantomjs (1.9.7.0)
+    phantomjs (1.9.7.1)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
