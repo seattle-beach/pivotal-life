@@ -1,9 +1,7 @@
-class Dashing.Comments extends Dashing.Widget
+class Dashing.Comments extends Dashing.PivotalLifeWidget
 
   @accessor 'quote', ->
     "#{@get('current_comment')?.body}"
-
-  @accessor 'updatedAtMessage', Util.updatedAtShortTime
 
   ready: ->
     @currentIndex = 0

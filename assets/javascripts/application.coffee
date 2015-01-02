@@ -5,6 +5,7 @@
 #= require moment-timezone.min.js
 
 #= require_directory .
+#= require ../../widgets/pivotal_life_widget
 #= require_tree ../../widgets
 
 console.log("Yeah! The dashboard has started!")

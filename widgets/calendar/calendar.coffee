@@ -1,6 +1,4 @@
-class Dashing.Calendar extends Dashing.Widget
-
-  @accessor 'updatedAtMessage', Util.updatedAtShortTime
+class Dashing.Calendar extends Dashing.PivotalLifeWidget
 
   ready: =>
     @index = 0

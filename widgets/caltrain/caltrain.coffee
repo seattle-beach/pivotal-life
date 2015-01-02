@@ -1,4 +1,4 @@
-class Dashing.Caltrain extends Dashing.Widget
+class Dashing.Caltrain extends Dashing.PivotalLifeWidget
   ready: =>
   onData: (snapshot) =>
     departures = {}
