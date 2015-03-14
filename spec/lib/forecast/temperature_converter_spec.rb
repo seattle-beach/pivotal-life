@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe TemperatureConverter do
+describe Forecast::TemperatureConverter do
   describe '#c_to_f' do
-    subject { TemperatureConverter.new(temperature).c_to_f }
+    subject { Forecast::TemperatureConverter.new(temperature).c_to_f }
 
     context 'when 0' do
       let(:temperature) { 0 }
@@ -21,7 +21,7 @@ describe TemperatureConverter do
   end
 
   describe 'f_to_c' do
-    subject { TemperatureConverter.new(temperature).f_to_c }
+    subject { Forecast::TemperatureConverter.new(temperature).f_to_c }
 
     context 'when 32' do
       let(:temperature) { 32 }
