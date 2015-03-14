@@ -61,6 +61,7 @@ describe ForecastFetcher do
       :current_icon=>"partly-cloudy-day",
       :current_desc=>"Mostly Cloudy",
       :apparent_temp=>55,
+      :alternate_temp=>13,
       :later_desc=>"Partly cloudy later this evening.",
       :later_icon=>"partly-cloudy-day",
       :next_desc=>"Mostly cloudy for the hour.",
