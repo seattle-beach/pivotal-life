@@ -16,7 +16,7 @@ $light-color: rgba(255, 255, 255, 0.7);
 
   .current-temp {
     color: $full-color;
-    font-size: 200px;
+    font-size: 180px;
   }
 
   .alternate-temp {
@@ -36,6 +36,6 @@ $light-color: rgba(255, 255, 255, 0.7);
   .flex-item {
     order: 0;
     flex: 0 1 auto;
-    align-self: flex-end;
+    align-self: auto;
   }
 }

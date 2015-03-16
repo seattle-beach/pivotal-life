@@ -4,11 +4,11 @@ class ForecastFetcher
   # "si" - International System of Units
   # "uk" - SI w. windSpeed in mph
   DEFAULT_LOCATIONS = {
-    sf: { lat: 40.740673, lon: -73.994808, units: 'us' },
-    pa: { lat: 37.394555, lon: -122.148039, units: 'us' },
-    london: { lat: 51.5072, lon: 0.1275, units: 'uk' },
-    nyc: { lat: 40.740673, lon: -73.994808, units: 'us', alt_temp_method: :f_to_c },
-    to: { lat: 43.649932, lon: -79.375756, units: 'si'}
+    sf: { lat: 40.740673, lon: -73.994808, units: 'us', temp_unit: :f },
+    pa: { lat: 37.394555, lon: -122.148039, units: 'us', temp_unit: :f },
+    london: { lat: 51.5072, lon: 0.1275, units: 'uk', temp_unit: :c },
+    nyc: { lat: 40.740673, lon: -73.994808, units: 'us', temp_unit: :f, alt_temp_unit: :c },
+    to: { lat: 43.649932, lon: -79.375756, units: 'si', temp_unit: :c }
   }
 
   def initialize(api_key, locations = DEFAULT_LOCATIONS)
@@ -20,7 +20,9 @@ class ForecastFetcher
   def data
     memo = {}
     locations.each_pair do |key, location|
-      memo[key]= location_fetcher.location_data(location)
+      response = location_fetcher.location_data(location)
+      formatter = Forecast::LocationResponseFormatter.new(location, response)
+      memo[key]= formatter.data
     end
     memo
   end
