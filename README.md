@@ -8,7 +8,7 @@ For example, the NYC office dashboard can be viewed at <http://pivotal-life.cfap
 
 ## Requirements
 
-### Software
+You will need the following to develop and run the dashboard locally:
 
 - [Ruby](https://www.ruby-lang.org/en/)
 - [Bundler](http://bundler.io/)
@@ -52,7 +52,7 @@ Next, build a `.env` file using the Cloud Foundry settings:
 
     $ ./populate-dotenv.sh
 
-You'll need the username and password in the generated `.env` file to visit the dashboar - it uses Basic Auth.
+Several of the jobs need tokens and URLs that are in the `.env` file.
 
 ### Running
 
@@ -60,20 +60,27 @@ Now run the local server:
     
     $ bundle exec dashing start
 
-Then navigate to <http://localhost:3030/> for the default or <http://localhost:3030/nyc> to see NYC.
-Login to basic auth using the AUTH_USERNAME and AUTH_PASSWORD in the `.env` file.
+Then navigate to <http://localhost:3030/> for the default dashboard or <http://localhost:3030/nyc> to see NYC's.
+Log in to basic auth using the `AUTH_USERNAME` and `AUTH_PASSWORD` from the `.env` file.
+
+## Adding an Office Dashboard
+
+If you'd like to add your own office's dashboard, do the following:
+
+1. Fork the project.
+2. Under the `dashboards` directory, create an `.erb` template for your office.
+3. Add any widgets that you'd like to make use of.
+4. Any office specific data should be stored in `offices.yml` and can be read with the `Offices` and `Office` classes.
+5. Run `rake` to run the tests pass.
+6. Commit your code.
+7. Make a pull request.
+8. Once your pull requests is merged you'll see your changes on the [staging environment](http://pivotal-life-staging.cfapps.io/).
 
 ## Deploying
 
-Once you are logged in to Cloud Foundry, per above, do the following:
+The application is automatically pushed to the [staging environment](http://pivotal-life-staging.cfapps.io/) once the build has passed on [Travis CI]((https://travis-ci.org/pivotal/pivotal-life)).
 
-### Staging
-
-    $ cf push pivotal-life-staging
-
-Navigate to <http://pivotal-life-staging.cfapps.io/>
-
-### Production
+Once you've checked your changes on the staging environment, you can push to Production by doing the following
 
     $ cf push pivotal-life
 
