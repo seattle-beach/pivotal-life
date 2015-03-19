@@ -10,8 +10,8 @@ class Dashing.RotatingClock extends Dashing.Widget
     { Toronto: "America/Toronto" }
     { London: "Europe/London" }
     { Chicago: "America/Chicago" }
-    { Boulder: "America/Phoenix" }
-    { Denver: "America/Phoenix" }
+    { Boulder: "America/Denver" }
+    { Denver: "America/Denver" }
     { "Palo Alto": "America/Los_Angeles" }
     ]
 
