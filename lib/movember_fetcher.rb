@@ -19,18 +19,13 @@ class MovemberFetcher
   attr_reader :page_source
 
   def team_name
-    clean_selector_output('h1')
+    team_page.css('h1')[1].content.strip
   end
 
   def donations_raised
-    with_units = clean_selector_output('.overflow:contains("Total Raised") .info')
-    with_units[/\s(.*)/, 1]
+    team_page.css('.key-statistic-value').first.content.split(' ').first
   end
 
-  def clean_selector_output(selector)
-    team_page.css(selector).first.content.strip
-  end
-    
   def team_page
     @team_page ||= Nokogiri::HTML(page_source)
   end

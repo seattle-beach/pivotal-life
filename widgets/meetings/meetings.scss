@@ -14,7 +14,6 @@ $background-color:  #343434;
 }
 
 #selectStyle {
-
   background-color: white;
   border-radius: 7px;
 	text-indent: 0.01px;
@@ -96,6 +95,22 @@ $background-color:  #343434;
   bottom: 25%;
   height: 200px;
   width: 90%;
+  border-radius: 5px;
+  border: 2px solid white;
+  margin: auto;
+  font-size: 60px;
+}
+
+.status #hoverbar {
+  position: absolute;
+  z-index:100;
+  width: 350px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 2px solid white;
+  background-color: rgba(0, 120, 110, 0.7);
+  color: white;
+  visibility: hidden;
   border-radius: 5px;
   border: 2px solid white;
   margin: auto;

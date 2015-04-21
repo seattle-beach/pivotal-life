@@ -14,9 +14,14 @@ $light-color: rgba(255, 255, 255, 0.7);
   background-color: $background-color;
   padding-top: 15px !important;
 
-  .temp {
+  .current-temp {
     color: $full-color;
-    font-size: 200px;
+    font-size: 180px;
+  }
+
+  .alternate-temp {
+    color: $light-color;
+    font-size: 100px;
   }
 
   .flex-container {

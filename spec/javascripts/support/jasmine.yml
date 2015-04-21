@@ -17,6 +17,7 @@ src_files:
   - assets/javascripts/moment-timezone.min.js
   - assets/javascripts/**/**.js
   - assets/javascripts/**/**.coffee
+  - widgets/**/pivotal_life_widget.coffee
   - widgets/**/*.coffee
 
 # stylesheets

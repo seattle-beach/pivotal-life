@@ -13,7 +13,6 @@ class MeetingsFetcher
       application_version: '1.0.0'
     )
 
-
     @client.authorization.client_id=ENV['GOOGLE_CLIENT_ID']
     @client.authorization.client_secret=ENV['GOOGLE_CLIENT_SECRET']
     @client.authorization.refresh_token=ENV['GOOGLE_REFRESH_TOKEN']
@@ -57,9 +56,9 @@ class MeetingsFetcher
         location: event['location'].nil? ? '' : event['location'],
         organizer: event['organizer'].nil? ? 'Anonymous' : event['organizer']['displayName'],
         organizer_email: event['organizer'].nil? ? '' : event['organizer']['email'],
-        start: Time.parse(event['start']['dateTime']).to_i,
-        end: Time.parse(event['end']['dateTime']).to_i,
-        time: Time.parse(event['start']['dateTime']).in_time_zone("Eastern Time (US & Canada)").strftime("%b %d, %I:%M %p")+" - "+Time.parse(event['end']['dateTime']).in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p"),
+        start: Time.parse(event['start']['dateTime'] || event['start']['date']).to_i,
+        end: Time.parse(event['end']['dateTime'] || event['end']['date']).to_i,
+        time: get_time_string(event),
         link: event['htmlLink'].nil? ? '#' : event['htmlLink']
       }
 
@@ -69,10 +68,21 @@ class MeetingsFetcher
     array.sort_by { |hash| hash[:start] }
   end
 
+  def get_time_string(event)
+    if event['start']['dateTime'] && event['end']['dateTime']
+      Time.parse(event['start']['dateTime']).in_time_zone("Eastern Time (US & Canada)").strftime("%b %d, %I:%M %p")+
+      " - "+Time.parse(event['end']['dateTime']).in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p")
+    elsif event['start']['date'] && event['end']['date']
+      "All Day Event"
+    else
+      "Unknown"
+    end
+  end
+
   def get_room_status(events)
-    green =  { text: 'Available - Room is not Booked', style: 'green' }
-    yellow = { text: 'Reserved - A Meeting will Start Soon', style: 'yellow' }
-    red =    { text: 'In Use - Room is Booked', style: 'red' }
+    green =  { text: 'Available', style: 'green' }
+    yellow = { text: 'Reserved', style: 'yellow' }
+    red =    { text: 'In Use', style: 'red' }
 
     status = green
     current_time = Time.now.to_i
@@ -82,6 +92,10 @@ class MeetingsFetcher
         status = yellow
       end
       if (item[:start]..item[:end]).include?(current_time)
+        status = red
+        break
+      end
+      if (item[:time] == "All Day Event")
         status = red
         break
       end
