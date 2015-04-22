@@ -13,6 +13,8 @@ london:
     url: https://www.google.com/calendar/feeds/pivotal.io_2pj9jporddaacm95dbp92c0pac%40group.calendar.google.com/public/full
 to:
   name: Toronto
+  calendar:
+    url: https://www.google.com/calendar/feeds/pivotal.io_33363132303235322d323930@resource.calendar.google.com/public/full
 pa:
   name: Palo Alto
 boulder:

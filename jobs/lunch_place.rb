@@ -15,7 +15,7 @@ places = YAML.load(File.read('to_lunchplaces.yml'))['places']
 SCHEDULER.every '30s', first_in: 0 do
   current_place = places.sample
   data = { place: current_place }
-  data['rating'] = "#{yelp_client.business(current_place['yelp_biz']).rating}/5"
+  data[:rating] = "#{yelp_client.business(current_place['yelp_biz']).rating}/5"
 
   if current_place['distance'] < 3
     data['wittyremark'] = "Come on, it's soo close!"
