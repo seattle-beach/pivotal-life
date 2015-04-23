@@ -25,4 +25,13 @@ $background-color:  #dc5945;
     font-size: 1.25em;
     font-weight: bold;
   }
+
+  &.pivot_faces_to {
+    background-color: #ba3523;
+
+    img {
+      border-radius: 18px;
+      width: 95%;
+    }
+  }
 }
