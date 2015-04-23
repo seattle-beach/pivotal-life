@@ -18,6 +18,7 @@ end
 
 def getSchedule(timingsFromYAML, returnTimings)
 	currentTime = Time.new
+	currentTime = currentTime.getlocal("-04:00")
 
 	timingsFromYAML.each do |timing|
 		scheduledTime = timing['time'].split(':')
@@ -34,9 +35,8 @@ def getSchedule(timingsFromYAML, returnTimings)
 			end
 		end
 
-		departureTime = Time.new(currentTime.year, currentTime.month, currentTime.day, hour, minute, 0)
-		
-		futureTwoHourTime = Time.new(currentTime.year, currentTime.month, currentTime.day, currentTime.hour + 2, currentTime.min, currentTime.sec)
+		departureTime = Time.new(currentTime.year, currentTime.month, currentTime.day, hour, minute, 0, "-04:00")
+		futureTwoHourTime = Time.new(currentTime.year, currentTime.month, currentTime.day, currentTime.hour + 2, currentTime.min, currentTime.sec, "-04:00")
 		diff = (departureTime - currentTime) * 1000
 
 		if currentTime <= departureTime && departureTime <= futureTwoHourTime
