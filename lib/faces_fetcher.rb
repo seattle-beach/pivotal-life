@@ -1,6 +1,9 @@
 require 'json'
 
 class FacesFetcher
+  @@defaultPhotoURL =  "https://pivots.pivotallabs.com/assets/default_directory_profile_photo.png"
+  @@localDefaultImage = "/assets/default_directory_profile_photo.png"
+
   def initialize(pivots_url)
     @pivots ||= JSON.parse(Net::HTTP.get(URI(pivots_url)))
   end
@@ -12,7 +15,7 @@ class FacesFetcher
       {
           first_name: pivot['first_name'],
           last_name: pivot['last_name'],
-          photo_url: pivot['photo_url'],
+          photo_url: if pivot['photo_url'] == @@defaultPhotoURL then @@localDefaultImage else pivot['photo_url'] end,
           title: pivot['title']
       }
     end
@@ -23,7 +26,7 @@ class FacesFetcher
       {
           first_name: pivot['first_name'],
           last_name: pivot['last_name'],
-          photo_url: pivot['photo_url'],
+          photo_url: if pivot['photo_url'] == @@defaultPhotoURL then @@localDefaultImage else pivot['photo_url'] end,
           title: pivot['title']
       }
     end
@@ -35,3 +38,4 @@ class FacesFetcher
     end
   end
 end
+

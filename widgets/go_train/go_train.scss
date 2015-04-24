@@ -10,20 +10,20 @@ $background-color:  #336633;
   background-color: $background-color;
   position: relative;
 
-  & h3 {
-    margin-bottom: 20px;
-  }
-
   .logo img {
     width: 35%;
     height: 14%;
     margin: auto;
+    margin-bottom: 20px;
   }
 
   .info_text {
   	font-size: 14px;
   	position: absolute;
-	bottom: 5px;
-	right: 5px;
+	  bottom: 5px;
+	  right: 5px;
+  }
+  .go-train-text{
+    color:black;
   }
 }
