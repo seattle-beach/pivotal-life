@@ -1,8 +1,6 @@
-[![Build Status](https://travis-ci.org/pivotal/pivotal-life.svg)](https://travis-ci.org/pivotal/pivotal-life) [![Dependency Status](https://gemnasium.com/pivotal/pivotal-life.svg)](https://gemnasium.com/pivotal/pivotal-life)
+[![Build Status](https://travis-ci.org/pivotal/pivotal-life.svg)](https://travis-ci.org/pivotal/pivotal-life) [![Dependency Status](https://gemnasium.com/pivotal/pivotal-life.svg)](https://gemnasium.com/pivotal/pivotal-life) [![Join the chat at https://gitter.im/pivotal/pivotal-life](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pivotal/pivotal-life?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Pivotal Life
-
-[![Join the chat at https://gitter.im/pivotal/pivotal-life](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pivotal/pivotal-life?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Pivotal Life is an information radiator for [Pivotal Labs](http://pivotallabs.com) offices. It shows information like the weather, public transportation schedules & status, upcoming office events, tweets and random Pivots.
 
