@@ -1,0 +1,18 @@
+[
+  {
+    "pivotId": 1,
+    "pivotLocation": "Boulder",
+    "pivotFirstName": "Jane",
+    "pivotLastName": "Smith",
+    "message": "Hi pivots",
+    "receivedAt": 1435347799
+  },
+  {
+    "pivotId": 2,
+    "pivotLocation": "Denver",
+    "pivotFirstName": "John",
+    "pivotLastName": "Denver",
+    "message": ":)",
+    "receivedAt": 1435347799
+  }
+]
