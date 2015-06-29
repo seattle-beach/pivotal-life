@@ -1,0 +1,18 @@
+<div class="pivot-texts-container">
+    <div data-showif="item">
+        <div class="title" data-bind="item.message"></div>
+
+        <div class="name">
+            <span class="first" data-bind="item.pivotFirstName"></span>
+            <span class="last" data-bind="item.pivotLastName"></span>
+            @
+            <span class="last" data-bind="item.receivedAt | times 1000 | dateFormat 'h:m a'"></span>
+        </div>
+    </div>
+
+    <div data-hideif="item">
+        <div class="title"">No messages</div>
+    </div>
+</div>
+
+<p class="message-reminder">Send a text message to <span data-bind="phoneNumberForTextMessages"></span></p>

@@ -1,0 +1,24 @@
+.widget-pivot-texts {
+  background-color: #dcdc00;
+  color: #234233;
+
+  .name {
+    font-weight: bold;
+    padding-top: 50px;
+    font-size: 0.8em;
+  }
+
+  .title {
+    font-size: 1.25em;
+    font-weight: bold;
+  }
+}
+
+.message-reminder {
+  font-size: 15px;
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  color: #639b8b;
+}
