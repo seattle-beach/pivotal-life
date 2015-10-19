@@ -21,3 +21,7 @@ boulder:
   name: Boulder
 denver:
   name: Denver
+sm:
+  name: Santa Monica
+  calendar:
+     url: https://www.google.com/calendar/feeds/pivotal.io_s4clikfb4f764urbc1l8q2pj1s%40group.calendar.google.com/public/basic
