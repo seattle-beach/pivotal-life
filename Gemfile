@@ -11,6 +11,8 @@ gem 'twitter'
 gem 'yelp'
 gem 'jwt', '~> 0.1.5'
 gem 'google-api-client'
+gem 'eventmachine', '~> 1.0.8'
+
 # so our Rakefile works everywhere
 gem 'rspec'
 gem 'jasmine'
