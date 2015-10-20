@@ -12,6 +12,7 @@ You will need the following to develop and run the dashboard locally:
 
 - [Ruby](https://www.ruby-lang.org/en/)
 - [Bundler](http://bundler.io/)
+- [Homebrew](http://brew.sh/)
 - [NodeJS](http://nodejs.org/) & [npm](https://www.npmjs.org/)
 - [PhantomJS](http://phantomjs.org)
 - [CloudFoundry Command-Line Interface](https://github.com/cloudfoundry/cli)
@@ -47,6 +48,8 @@ Then log in to Cloud Foundry:
 If you belong to more than one org, select the `pivotallabs` org.
 
 If you have acces to more than one space, select the `pivotal-life` space.
+
+You may need an account. Go here(http://run.pivotal.io/) to grab one!
 
 Next, build a `.env` file using the Cloud Foundry settings:
 
