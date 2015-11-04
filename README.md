@@ -91,7 +91,7 @@ Navigate to <http://pivotal-life.cfapps.io/>
 
 ## Resources
 
-- [Pivotal Tracker Project](https://www.pivotaltracker.com/s/projects/950406)
+- [Pivotal Tracker Project](https://www.pivotaltracker.com/n/projects/1003138)
 - [Dashing](http://shopify.github.com/dashing)
 - PM: Michael McGinley
 
