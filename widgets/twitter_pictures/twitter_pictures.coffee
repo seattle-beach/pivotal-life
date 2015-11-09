@@ -6,10 +6,21 @@ class Dashing.TwitterPictures extends Dashing.Widget
     @nextPicture()
     @startCarousel()
 
+  deDupUrls: (data) ->
+    urls = []
+    i = 0
+    while i < @get('tweets').length
+      if @get('tweets')[i].url in urls
+        @get('tweets').splice(i,1)
+      else
+        urls.push(@get('tweets')[i].url)
+        i++
+
   onData: (data) ->
     @currentIndex = 0
     if data and data.tweets.length > 0
       @set('item', data.tweets[@currentIndex])
+      @deDupUrls(data)
     else
       placeholder = {
         'url': '/assets/pivotal_squirrel.png',
