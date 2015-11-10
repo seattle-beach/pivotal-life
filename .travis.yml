@@ -12,3 +12,6 @@ deploy:
   app: pivotal-life-staging
   on:
     repo: pivotal/pivotal-life
+notifications:
+  slack:
+    secure: B62fOgZnEiQnt2Rx6t8lybSD/cYPQRbotDZ+wU7x/NNSSylWOXywmjuh6nplCYgNYRAniqtZk30dRlCA5+y2jKfdEZ3/CUuaDv0+z0tz4n2Mk084k+DrBI3T4f81k2BCQyAZ8wMdSN7bEEyBOWmeYDzsDCudAARRcK3YHfJAmr8=
