@@ -19,5 +19,11 @@ describe RandomFacesFetcher do
       fetcher['San Francisco'].each {|hash| first_names << hash[:first_name] }
       expect(first_names).to match_array(%w[Aaron Aaron Elana Molly Stuff Stuff1 Stuff2 Stuff3 Stuff4 Stuff5 Stuff6 Stuff7])
     end
+
+    it 'skips pivots with default picture' do
+      first_names = []
+      fetcher['Toronto'].each {|hash| first_names << hash[:first_name] }
+      expect(first_names).to match_array(%w[Aaron])
+    end
   end
 end

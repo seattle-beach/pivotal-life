@@ -13,7 +13,7 @@ describe PivotTwitterNameFetcher do
     it 'returns a list of downcased twitter names for all pivots who have provided their name and adds pivotallife account' do
       names = @name_fetcher.get_twitter_names
       expect(names[0]).to eq "ajarecki"
-      expect(names[-2]).to eq "sblarg7"
+      expect(names[-2]).to eq "petergriffin"
       expect(names[-1]).to eq "pivotallife"
     end
 
