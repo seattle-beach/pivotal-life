@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'citibikenyc'
 gem 'dashing'
 gem 'dotenv'
 gem 'geocoder'
