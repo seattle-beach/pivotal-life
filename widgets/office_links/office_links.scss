@@ -1,13 +1,20 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color: #3790A4;
+$background-color: #01786E;
 
 // ----------------------------------------------------------------------------
 // Widget-offices styles
 // ----------------------------------------------------------------------------
 .widget-office-links {
   background-color: $background-color;
-  font-size: 1.125em;
+  font-size: 1.4em;
   line-height: 200%;
+}
+
+.title {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+  color: #B1C5C6;
 }
