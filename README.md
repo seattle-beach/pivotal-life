@@ -93,5 +93,5 @@ Navigate to <http://pivotal-life.cfapps.io/>
 
 - [Pivotal Tracker Project](https://www.pivotaltracker.com/n/projects/1003138)
 - [Dashing](http://shopify.github.com/dashing)
-- PM: Michael McGinley
+- PM: Brian Kelly (bkelly at pivotal dot io)
 
