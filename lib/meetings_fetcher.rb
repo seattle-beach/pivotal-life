@@ -1,3 +1,5 @@
+=begin
+#gem 'google/api_client', '=0.8.6'
 require 'google/api_client'
 require 'google/api_client/client_secrets'
 require 'google/api_client/auth/installed_app'
@@ -113,3 +115,4 @@ class MeetingsFetcher
     { items: events, status: get_room_status(events) }
   end
 end
+=end

@@ -6,6 +6,7 @@ class Dashing.PivotFaces extends Dashing.Widget
 
 
   onData: (data) =>
+    #console.log(data.random_faces)
     @set('item', data.random_faces[0])
 
   rotate: =>

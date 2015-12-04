@@ -6,6 +6,7 @@ class FacesFetcher
 
   def initialize(pivots_url)
     @pivots ||= JSON.parse(Net::HTTP.get(URI(pivots_url)))
+    #puts "HERE: ", @pivots
   end
 
   def new_pivots(location)
@@ -40,6 +41,8 @@ class FacesFetcher
     @all_pivots_by_location = @pivots.select do |pivot|
       pivot['location_name'] == location
     end
+    #puts "HERE 2: ", @all_pivots_by_location
+    #return @all_pivots_by_location
   end
 end
 

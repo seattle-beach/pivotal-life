@@ -1,0 +1,16 @@
+scheduler caught exception:
+SSL_connect returned=1 errno=0 state=error: certificate verify failed
+/Users/pivotal/workspace/pivotal-life/lib/faces_fetcher.rb:8:in `initialize'
+/Users/pivotal/workspace/pivotal-life/jobs/pivot_faces.rb:13:in `new'
+/Users/pivotal/workspace/pivotal-life/jobs/pivot_faces.rb:13:in `block (2 levels) in <top (required)>'
+/Users/pivotal/workspace/pivotal-life/jobs/pivot_faces.rb:11:in `each'
+/Users/pivotal/workspace/pivotal-life/jobs/pivot_faces.rb:11:in `block in <top (required)>'
+
+
+scheduler caught exception:
+SSL_connect returned=1 errno=0 state=error: certificate verify failed
+/Users/pivotal/workspace/pivotal-life/lib/pivot_twitter_name_fetcher.rb:16:in `get_twitter_names'
+/Users/pivotal/workspace/pivotal-life/lib/pivot_twitter_picture_fetcher.rb:9:in `get_pivot_picture_urls_by_hashtag'
+/Users/pivotal/workspace/pivotal-life/jobs/twitter_pics.rb:12:in `block in <top (required)>'
+
+

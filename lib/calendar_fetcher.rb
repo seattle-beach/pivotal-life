@@ -3,30 +3,49 @@ require 'open-uri'
 require 'nokogiri'
 require 'cgi'
 
-class CalendarFetcher
-  def initialize(url, name = '')
-    events = []
-    now = DateTime.now
-    min = CGI.escape(now.to_s)
+require 'googleauth'
+require 'google/apis/calendar_v3'
 
-    next_sunday = (now.to_date + (7-now.to_date.wday)+1).to_datetime
-    max = CGI.escape(next_sunday.to_s)
-    url += "?singleevents=true&orderby=starttime&start-min=#{min}&start-max=#{max}"
-    reader = Nokogiri::XML(open(url))
-    reader.remove_namespaces!
-    reader.xpath("//feed/entry").each do |e|
-      title = e.at_xpath("./title").text
-      content = e.at_xpath("./content").text
-      when_node = e.at_xpath("./when")
-      where_node_value = e.at_xpath("./where").attribute("valueString")
+class CalendarFetcher
+
+
+  MAX_EVENTS_TO_GET = 7
+
+  attr_reader :client
+
+  def initialize(name='')
+    @name = name
+    @@Calendar = Google::Apis::CalendarV3
+    scopes = [@@Calendar::AUTH_CALENDAR_READONLY]
+    @client = @@Calendar::CalendarService.new
+
+    #set authorization info and also actually try connecting
+    @client.authorization = Google::Auth.get_application_default(scopes)
+  end
+
+  def get_events(cal_id)
+    events = []
+
+    @EventClass = Event.new
+    min = Time.now.iso8601
+
+    results = client.list_events(cal_id, max_results: MAX_EVENTS_TO_GET, single_events: true,
+                                 order_by: 'startTime', time_min: min)
+
+    results.items.each do |event|
+      title = event.summary
+      content = event.description
+      when_node_start = event.start.date || event.start.date_time
+      when_node_end = event.end.date || event.end.date_time
+      where_node = event.location
       events.push({title: title,
-                   body: content ? content : "",
-                   calendar: name,
-                   where: where_node_value && where_node_value.text,
-                   when_start_raw: when_node ? DateTime.iso8601(when_node.attribute('startTime').text).to_time.to_i : 0,
-                   when_end_raw: when_node ? DateTime.iso8601(when_node.attribute('endTime').text).to_time.to_i : 0,
-                   when_start: when_node ? DateTime.iso8601(when_node.attribute('startTime').text).to_time : "No time",
-                   when_end: when_node ? DateTime.iso8601(when_node.attribute('endTime').text).to_time : "No time"
+                   body: @EventClass.description(content),
+                   calendar: @name,
+                   where: where_node,
+                   when_start_raw: @EventClass.set_when_raw(when_node_start),
+                   when_end_raw: @EventClass.set_when_raw(when_node_end),
+                   when_start: @EventClass.set_when(when_node_start),
+                   when_end: @EventClass.set_when(when_node_end)
                   })
     end
 
@@ -36,5 +55,23 @@ class CalendarFetcher
 
   def data
     @data
+  end
+
+
+  # logic moved out of structure passed to events.push, above.
+  # In order to facilitate rspec testing
+  class Event
+
+    def description(content)
+      content ? content : ""
+    end
+
+    def set_when_raw(when_node_raw)
+      when_node_raw ? when_node_raw.to_time.to_i : 0
+    end
+
+    def set_when(when_node)
+      when_node ? when_node.to_time : "No time"
+    end
   end
 end

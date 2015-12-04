@@ -1,0 +1,123 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.googleapis.com/oauth2/v3/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiI4NzQ4ODY1NzY5MDMtZGoxaWdiZXU0bG5rOTdxOHVqYWJvbDJldjVwdjBmMXBAZGV2ZWxvcGVyLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJhdWQiOiJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9vYXV0aDIvdjMvdG9rZW4iLCJleHAiOjE0NDkyNTg3MDgsImlhdCI6MTQ0OTI1ODU4OCwic2NvcGUiOiJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2NhbGVuZGFyLnJlYWRvbmx5In0.b4SJQ_ZmV3jL-G6k4aevIN6HBNC7EmaVbnIW104CxJootaDtRHDyp6pROaG9Z9TAjkz2qEosV4gyJRVT3aE2igm2F9lZxc5ocXYjZNNFOxkS38zf27LWMREyzx4i0kGWM6AC7CwETth40Ccv_3K26973E16ZYUTfEFf0bqsmRiTbTt-w3dH3JguBpQEmXKw7Lrofc8YyrYK0ClFXdAySQSc-ebizA3u_xqIMnfW60xyp4DY4kJkD-Nvwa-xLzUhWVMLpzrHNJU21ZDhFjgmrEnDQa2vhZrXePg2LvRAw-3RgkARIt3PIigmdrL7tkhKE_x7AUwNbUVFENq9YTz5yiQ
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Fri, 04 Dec 2015 19:50:48 GMT
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=1
+      Alt-Svc:
+      - quic=":443"; ma=604800; v="30,29,28,27,26,25"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "access_token": "ya29.QAJA7vHgpBmgYsrSODV9QgC2o2sFS4jksouTa7J3BzM4dfsHuypApWe-jOecobEh3fiJ",
+         "token_type": "Bearer",
+         "expires_in": 3600
+        }
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 19:50:48 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/calendar/v3/calendars/pivotal.io_3sj0q4g8h4c79bscqh5mvj1158@group.calendar.google.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        unknown/0.0.0 google-api-ruby-client/0.9.pre3 Mac OS X/10.10.5
+         (gzip)
+      Authorization:
+      - Bearer ya29.QAJA7vHgpBmgYsrSODV9QgC2o2sFS4jksouTa7J3BzM4dfsHuypApWe-jOecobEh3fiJ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Fri, 04 Dec 2015 19:50:48 GMT
+      Date:
+      - Fri, 04 Dec 2015 19:50:48 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Etag:
+      - '"wPB4sv3SXX_TNjlIyBWrKwcZTHg/-8HdC4UFB1KLYcJr2TxBK1TqU6M"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=1
+      Alt-Svc:
+      - quic=":443"; ma=604800; v="30,29,28,27,26,25"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "calendar#calendar",
+         "etag": "\"wPB4sv3SXX_TNjlIyBWrKwcZTHg/-8HdC4UFB1KLYcJr2TxBK1TqU6M\"",
+         "id": "pivotal.io_3sj0q4g8h4c79bscqh5mvj1158@group.calendar.google.com",
+         "summary": "NYC Events",
+         "timeZone": "America/New_York"
+        }
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 19:50:48 GMT
+recorded_with: VCR 3.0.0

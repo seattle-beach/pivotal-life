@@ -2,7 +2,7 @@
 nyc:
   name: New York
   calendar:
-    url: http://www.google.com/calendar/feeds/pivotallabs.com_t6m43imcl7h9i3fbcj62s6gqig%40group.calendar.google.com/public/full
+    id: pivotal.io_3sj0q4g8h4c79bscqh5mvj1158@group.calendar.google.com
 sf:
   name: San Francisco
   calendar:
@@ -15,6 +15,7 @@ to:
   name: Toronto
   calendar:
     url: https://www.google.com/calendar/feeds/pivotal.io_33363132303235322d323930@resource.calendar.google.com/public/full
+    id: pivotal.io_33363132303235322d323930@resource.calendar.google.com
 pa:
   name: Palo Alto
 boulder:
