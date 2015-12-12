@@ -10,11 +10,10 @@ sf:
 london:
   name: London
   calendar:
-    url: https://www.google.com/calendar/feeds/pivotal.io_2pj9jporddaacm95dbp92c0pac%40group.calendar.google.com/public/full
+    id: pivotal.io_2pj9jporddaacm95dbp92c0pac@group.calendar.google.com
 to:
   name: Toronto
   calendar:
-    url: https://www.google.com/calendar/feeds/pivotal.io_33363132303235322d323930@resource.calendar.google.com/public/full
     id: pivotal.io_33363132303235322d323930@resource.calendar.google.com
 pa:
   name: Palo Alto
@@ -25,4 +24,4 @@ denver:
 sm:
   name: Santa Monica
   calendar:
-     url: https://www.google.com/calendar/feeds/pivotal.io_s4clikfb4f764urbc1l8q2pj1s%40group.calendar.google.com/public/basic
+     id: pivotal.io_s4clikfb4f764urbc1l8q2pj1s@group.calendar.google.com
