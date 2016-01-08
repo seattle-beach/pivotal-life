@@ -33,6 +33,12 @@ To checkout and run the project locally:
     $ bundle
     $ npm install -g coffee-script
 
+Note on use of bundle in deployment mode, if you are modifying the Gemfile:
+
+    $ rm Gemfile.lock
+    $ bundle install # recreates the lock file
+    $ bundle install --deployment
+
 ### Environment Variables
 
 To run the dashboard you will need a `.env` file with various tokens and keys.  The fastest way to do this is by pulling them down from Cloud Foundry.
@@ -56,6 +62,10 @@ Next, build a `.env` file using the Cloud Foundry settings:
     $ ./populate-dotenv.sh
 
 Several of the jobs need tokens and URLs that are in the `.env` file.
+
+If you need to add custom variables, you may do so by modifying varlist.
+
+populate-dotenv.sh has functionality to either use varlist or append it to the .env from CF settings.
 
 ### Running
 
