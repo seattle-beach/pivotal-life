@@ -3,5 +3,6 @@ history.yml
 .env
 coverage
 .idea
+vendor
 
 REVISION

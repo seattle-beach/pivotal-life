@@ -5,18 +5,26 @@ nyc:
     id: pivotal.io_3sj0q4g8h4c79bscqh5mvj1158@group.calendar.google.com
 sf:
   name: San Francisco
-  calendar:
-    url: http://www.google.com/calendar/feeds/pivotallabs.com_cdjvcp4tfaum7m0kie2na4dpgc%40group.calendar.google.com/public/full'
+#  calendar:
+#    url: http://www.google.com/calendar/feeds/pivotallabs.com_cdjvcp4tfaum7m0kie2na4dpgc%40group.calendar.google.com/public/full
 london:
   name: London
-  calendar:
-    id: pivotal.io_2pj9jporddaacm95dbp92c0pac@group.calendar.google.com
+  # This is a Pivotal Tech Talks calendar. May have to be replaced with a general event cal. Also the service account doesn't have access to this one
+#  calendar:
+#    id: pivotal.io_2pj9jporddaacm95dbp92c0pac@group.calendar.google.com
 to:
   name: Toronto
   calendar:
     id: pivotal.io_33363132303235322d323930@resource.calendar.google.com
 pa:
   name: Palo Alto
+  calendar:
+    id: pivotal.io_gdmvh1u9r7jc67qiob4cr7ibf4@group.calendar.google.com
+#sea:
+#  name: Seattle
+#  calendar:
+#    # This is the interview calendar..
+#    id: pivotal.io_dma7avhanktv4tcp0cd1hupit8@group.calendar.google.com
 boulder:
   name: Boulder
 denver:
@@ -24,4 +32,4 @@ denver:
 sm:
   name: Santa Monica
   calendar:
-     id: pivotal.io_s4clikfb4f764urbc1l8q2pj1s@group.calendar.google.com
+     id: pivotal.io_2d3130373835303330383331@resource.calendar.google.com
