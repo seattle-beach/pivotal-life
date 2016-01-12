@@ -1,4 +1,4 @@
-require  'spec_helper'
+require 'spec_helper'
 require 'timecop'
 require 'time'
 
@@ -6,14 +6,13 @@ require 'time'
 describe CalendarFetcher do
 
   describe 'authorization' do
-    GOOGLE_APPLICATION_CREDENTIALS_FILE = 'EventsListCal-77f97e92664d.json'
+    GOOGLE_APPLICATION_CREDENTIALS_FILE = 'spec/testcal-credentials.json'
     # hardcoded for Test calendar
     let(:calendar_id) { 'pivotal.io_4vc0jqoo3nm4dt3uj9omojtgjc@group.calendar.google.com' }
     let(:fetcher) {
       ENV['GOOGLE_APPLICATION_CREDENTIALS'] = GOOGLE_APPLICATION_CREDENTIALS_FILE
       CalendarFetcher.new
     }
-
 
     it 'authorization test' do
       VCR.use_cassette('CalendarFetcher/auth') do
