@@ -4,5 +4,6 @@ history.yml
 coverage
 .idea
 vendor
+varlist.complete
 
 REVISION
