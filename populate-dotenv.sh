@@ -13,29 +13,17 @@ addFromVarlist() {
   cat $VAR_LIST >> $ENV_FILE
 }
 
-
 if [ -e $ENV_FILE ]
 then
   echo "Not overwriting your .env file."
 else
   if [ -e $VAR_LIST ]
   then
-    echo "varlist found. From which should I create the .env file? [default: 1]"
-    echo
-    echo "1 - from the CF pivotal-life environment, then append varlist"
-    echo "2 - from varlist, ignoring variables in the CF pivotal-life environment"
-    echo "3 - from the CF pivotal-life environment, ignoring varlist"
-    echo
-    read sel
-    case $sel in
-      "") createFromCF; addFromVarlist;;
-      1) createFromCF; addFromVarlist;;
-      2) addFromVarlist;;
-      3) createFromCF;;
-      *) echo "Bad value. Nothing was done, so you should re-run this script if you want an .env";;
-    esac
+    createFromCF
+    addFromVarlist
   else
-    echo "No varlist."
+    echo "WARNING: YOU DON'T HAVE A VAR LIST. THIS MAY BREAK YOUR APP."
+    echo "Continuing anyway..."
     createFromCF
   fi
 fi

@@ -9,6 +9,10 @@ require 'capybara/dsl'
 require 'vcr'
 require 'pry'
 require 'rack/test'
+require 'dotenv'
+
+# override variables set from .env by config.ru with values from .env.test
+Dotenv.overload('.env.test')
 
 # Ensure that full Rack configuration is loaded (including auth)
 def app

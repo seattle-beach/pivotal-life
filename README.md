@@ -53,7 +53,7 @@ Then log in to Cloud Foundry:
 
 If you belong to more than one org, select the `pivotallabs` org.
 
-If you have acces to more than one space, select the `pivotal-life` space.
+If you have access to more than one space, select the `pivotal-life` space.
 
 You may need an account. Go here(http://run.pivotal.io/) to grab one!
 
