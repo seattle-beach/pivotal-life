@@ -5,18 +5,16 @@ http_interactions:
     uri: https://www.googleapis.com/oauth2/v3/token
     body:
       encoding: ASCII-8BIT
-      string: grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiI4NzQ4ODY1NzY5MDMtZGoxaWdiZXU0bG5rOTdxOHVqYWJvbDJldjVwdjBmMXBAZGV2ZWxvcGVyLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJhdWQiOiJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9vYXV0aDIvdjMvdG9rZW4iLCJleHAiOjE0NDkyNTg3MDgsImlhdCI6MTQ0OTI1ODU4OCwic2NvcGUiOiJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2NhbGVuZGFyLnJlYWRvbmx5In0.b4SJQ_ZmV3jL-G6k4aevIN6HBNC7EmaVbnIW104CxJootaDtRHDyp6pROaG9Z9TAjkz2qEosV4gyJRVT3aE2igm2F9lZxc5ocXYjZNNFOxkS38zf27LWMREyzx4i0kGWM6AC7CwETth40Ccv_3K26973E16ZYUTfEFf0bqsmRiTbTt-w3dH3JguBpQEmXKw7Lrofc8YyrYK0ClFXdAySQSc-ebizA3u_xqIMnfW60xyp4DY4kJkD-Nvwa-xLzUhWVMLpzrHNJU21ZDhFjgmrEnDQa2vhZrXePg2LvRAw-3RgkARIt3PIigmdrL7tkhKE_x7AUwNbUVFENq9YTz5yiQ
+      string: grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0ZXN0LTYzOUBldmVudHNsaXN0Y2FsLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vb2F1dGgyL3YzL3Rva2VuIiwiZXhwIjoxNDUyNjE5NzI5LCJpYXQiOjE0NTI2MTk2MDksInNjb3BlIjoiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9jYWxlbmRhci5yZWFkb25seSJ9.qjn-5CFDGPQsbp7spRWhKaL6xE2QHLznYlMaDDJLUyOTheciWdu8tPp1FAs1pnfJEuV-u8wpM9Z0SAU-I67FxGQiOJxTBOO9dZ46i6DPKhALNx0KR4wNfI4q2VLQPq0rxX7sAcrCOelFSduOpljhnnGX7aDTGNzdZ4gM9ZwCC8fD2qIpfhY1kExx_7EyY8icrj4Kkvt3j1bOgZnU8FEYUAtEujkOo9NUbjZ9w9TRE1WhExpOAhOrujAqat9yRBk2dp3dYwuc3prQYfv_JlsrYtgCC_3oANztCa6iR-_KO1vvQUlj_nUuM9Eq_espvYyJ0WGKl9EMwYtyejTf4KfhAw
     headers:
-      Cache-Control:
-      - no-store
+      User-Agent:
+      - Faraday v0.9.2
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
@@ -29,7 +27,7 @@ http_interactions:
       Expires:
       - Fri, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Fri, 04 Dec 2015 19:50:48 GMT
+      - Tue, 12 Jan 2016 17:27:43 GMT
       Vary:
       - Origin
       - X-Origin
@@ -53,15 +51,15 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-         "access_token": "ya29.QAJA7vHgpBmgYsrSODV9QgC2o2sFS4jksouTa7J3BzM4dfsHuypApWe-jOecobEh3fiJ",
+         "access_token": "ya29.ZwLqNy-0TYHitT7z9-XRStHDKpcMGNlqgUg4k5EpOUy968kNEBj6fPww1bisqLJEZKB0iA",
          "token_type": "Bearer",
          "expires_in": 3600
         }
     http_version: 
-  recorded_at: Fri, 04 Dec 2015 19:50:48 GMT
+  recorded_at: Tue, 12 Jan 2016 17:27:50 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/calendar/v3/calendars/pivotal.io_3sj0q4g8h4c79bscqh5mvj1158@group.calendar.google.com
+    uri: https://www.googleapis.com/calendar/v3/calendars/pivotal.io_4vc0jqoo3nm4dt3uj9omojtgjc@group.calendar.google.com
     body:
       encoding: US-ASCII
       string: ''
@@ -71,7 +69,7 @@ http_interactions:
         unknown/0.0.0 google-api-ruby-client/0.9.pre3 Mac OS X/10.10.5
          (gzip)
       Authorization:
-      - Bearer ya29.QAJA7vHgpBmgYsrSODV9QgC2o2sFS4jksouTa7J3BzM4dfsHuypApWe-jOecobEh3fiJ
+      - Bearer ya29.ZwLqNy-0TYHitT7z9-XRStHDKpcMGNlqgUg4k5EpOUy968kNEBj6fPww1bisqLJEZKB0iA
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -82,13 +80,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Fri, 04 Dec 2015 19:50:48 GMT
+      - Tue, 12 Jan 2016 17:27:43 GMT
       Date:
-      - Fri, 04 Dec 2015 19:50:48 GMT
+      - Tue, 12 Jan 2016 17:27:43 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"wPB4sv3SXX_TNjlIyBWrKwcZTHg/-8HdC4UFB1KLYcJr2TxBK1TqU6M"'
+      - '"wPB4sv3SXX_TNjlIyBWrKwcZTHg/5D2nCmilTpAOTvBx21RsD7g-fLw"'
       Vary:
       - Origin
       - X-Origin
@@ -113,11 +111,11 @@ http_interactions:
       string: |
         {
          "kind": "calendar#calendar",
-         "etag": "\"wPB4sv3SXX_TNjlIyBWrKwcZTHg/-8HdC4UFB1KLYcJr2TxBK1TqU6M\"",
-         "id": "pivotal.io_3sj0q4g8h4c79bscqh5mvj1158@group.calendar.google.com",
-         "summary": "NYC Events",
+         "etag": "\"wPB4sv3SXX_TNjlIyBWrKwcZTHg/5D2nCmilTpAOTvBx21RsD7g-fLw\"",
+         "id": "pivotal.io_4vc0jqoo3nm4dt3uj9omojtgjc@group.calendar.google.com",
+         "summary": "testcal",
          "timeZone": "America/New_York"
         }
     http_version: 
-  recorded_at: Fri, 04 Dec 2015 19:50:48 GMT
-recorded_with: VCR 3.0.0
+  recorded_at: Tue, 12 Jan 2016 17:27:50 GMT
+recorded_with: VCR 3.0.1
