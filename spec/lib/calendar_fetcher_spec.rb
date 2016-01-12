@@ -2,24 +2,29 @@ require  'spec_helper'
 require 'timecop'
 require 'time'
 
+
 describe CalendarFetcher do
 
-  # hardcoded for NYC Event calendar. see offices.yml
-  let(:calendar_id) { 'pivotal.io_3sj0q4g8h4c79bscqh5mvj1158@group.calendar.google.com' }
-  let(:fetcher) { CalendarFetcher.new }
-  let(:event) { CalendarFetcher::Event.new }
-  #let(:curr_zone) { Time.now.utc_offset }
-  let(:curr_zone) { Time.now.strftime("%z") }
+  describe 'authorization' do
+    GOOGLE_APPLICATION_CREDENTIALS_FILE = 'EventsListCal-77f97e92664d.json'
+    # hardcoded for Test calendar
+    let(:calendar_id) { 'pivotal.io_4vc0jqoo3nm4dt3uj9omojtgjc@group.calendar.google.com' }
+    let(:fetcher) {
+      ENV['GOOGLE_APPLICATION_CREDENTIALS'] = GOOGLE_APPLICATION_CREDENTIALS_FILE
+      CalendarFetcher.new
+    }
 
 
-  it 'authorization test' do
-    VCR.use_cassette('CalendarFetcher/auth') do
-      cal = fetcher.client.get_calendar(calendar_id)
-      expect(cal.id).to eq(calendar_id)
+    it 'authorization test' do
+      VCR.use_cassette('CalendarFetcher/auth') do
+        cal = fetcher.client.get_calendar(calendar_id)
+        expect(cal.id).to eq(calendar_id)
+      end
     end
   end
 
-
+  let(:event) { CalendarFetcher::Event.new }
+  let(:curr_zone) { Time.now.strftime("%z") }
 
   it 'event description test' do
     expect(event.description(nil)).to eq ''
@@ -39,7 +44,6 @@ describe CalendarFetcher do
     # This is acceptable since Date is returned only for all-day events, and in local time
     # And the local dashboard cares about local midnight-to-midnight.
     # NOTE: no longer using a hardcoded epoch time since that's fixed to EST
-    #expect(event.set_when_raw(Date.new(2015,11,24))).to equal 1448341200
     expect(event.set_when_raw(Date.new(2015,11,24))).to equal Time.new(2015,11,24).to_i
   end
 
@@ -47,7 +51,6 @@ describe CalendarFetcher do
     expect(event.set_when(nil)).to eq "No time"
     puts curr_zone
     expect(event.set_when(DateTime.new(2015,11,24,15,20,0,curr_zone))).to eq Time.new(2015,11,24,15,20,0)
-    #expect(event.set_when(DateTime.iso8601("20151124T152000#{curr_zone}"))).to eq Time.new(2015,11,24,15,20,0)
   end
 
   it 'event Date bounds test' do
