@@ -6,11 +6,9 @@ require 'time'
 describe CalendarFetcher do
 
   describe 'authorization' do
-    GOOGLE_APPLICATION_CREDENTIALS_FILE = 'spec/testcal-credentials.json'
     # hardcoded for Test calendar
     let(:calendar_id) { 'pivotal.io_4vc0jqoo3nm4dt3uj9omojtgjc@group.calendar.google.com' }
     let(:fetcher) {
-      ENV['GOOGLE_APPLICATION_CREDENTIALS'] = GOOGLE_APPLICATION_CREDENTIALS_FILE
       CalendarFetcher.new
     }
 
