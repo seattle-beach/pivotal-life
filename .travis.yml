@@ -3,7 +3,16 @@ language: ruby
 rvm:
 - 2.1.2
 after_success:
-  - ls -l .
+  - pwd
+  - ls -al .
+  - echo 'ssh directory'
+  - ls -al ./.ssh
+  - echo 'parent directory'
+  - ls -al ../.
+  - echo 'home directory'
+  - ls -al ~/
+  - echo 'build directory'
+  - ls -al ../../.
 deploy:
   edge: true
   provider: cloudfoundry
