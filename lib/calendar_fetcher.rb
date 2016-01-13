@@ -25,7 +25,7 @@ class CalendarFetcher
     ENV['GOOGLE_APPLICATION_CREDENTIALS'] = GOOGLE_APPLICATION_CREDENTIALS_FILE
     service_account_file = File.expand_path('../auth_secrets/service-account-credentials.json', File.dirname(__FILE__))
     google_credentials_template = File.expand_path('../templates/service-account-credentials.json.erb', File.dirname(__FILE__))
-    File.open(service_account_file, 'w') { |file| file.write(ERB.new(File.read(google_credentials_template)).result )}
+    File.open(service_account_file, 'w', 0600) { |file| file.write(ERB.new(File.read(google_credentials_template)).result )}
     @client.authorization = Google::Auth.get_application_default(scopes)
   end
 
