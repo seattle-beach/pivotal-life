@@ -2,7 +2,7 @@ sudo: false
 language: ruby
 rvm:
 - 2.1.2
-before_deploy:
+after_success:
   pwd
   ls -l ../.
 deploy:
