@@ -2,6 +2,9 @@ sudo: false
 language: ruby
 rvm:
 - 2.1.2
+before_deploy:
+  pwd
+  ls -l ../.
 deploy:
   provider: cloudfoundry
   api: https://api.run.pivotal.io
