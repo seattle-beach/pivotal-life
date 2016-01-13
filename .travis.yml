@@ -3,9 +3,9 @@ language: ruby
 rvm:
 - 2.1.2
 after_success:
-  - pwd
-  - ls -l ../.
+  - ls -l .
 deploy:
+  edge: true
   provider: cloudfoundry
   api: https://api.run.pivotal.io
   username: bkelly@pivotal.io
