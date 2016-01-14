@@ -11,6 +11,7 @@ gem 'yelp'
 gem 'jwt'
 gem 'signet'
 gem 'google-api-client', '= 0.9.pre3' # 0.9.pre5 inhibits VCR from recording response bodies
+gem 'representable', '~> 2.3.0' #See: https://github.com/google/google-api-ruby-client/issues/314
 gem 'eventmachine', '~> 1.0.8'
 
 # so our Rakefile works everywhere
