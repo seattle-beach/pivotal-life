@@ -5,7 +5,7 @@ VAR_LIST="varlist"
 
 createFromCF() {
   echo "Creating new .env file from Cloud Foundry pivotal-life environment."
-  CF_COLOR=false cf env pivotal-life | sed '/Getting env variables.*/,/User-Provided:/d' | grep ':' | sed -e 's/\: */=/' > $ENV_FILE
+  CF_COLOR=false cf env pivotal-life-staging | sed '/Getting env variables.*/,/User-Provided:/d' | grep ':' | sed -e 's/\: */=/' > $ENV_FILE
 }
 
 addFromVarlist() {
