@@ -3,6 +3,8 @@ language: ruby
 rvm:
 - 2.1.2
 before_deploy:
+  - git config user.name "Pivotal Life Travis CI"
+  - git config user.email "pivotal-life@example.com"
   - git stash --all
 deploy:
   provider: cloudfoundry
