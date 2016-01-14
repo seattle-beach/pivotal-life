@@ -1,7 +1,7 @@
 require 'json'
 
 class FacesFetcher
-  @@defaultPhotoURL =  "https://pivots.pivotallabs.com/assets/default_directory_profile_photo.png"
+  @@defaultPhotoURL =  "https://pivots.cfapps.io/assets/default_directory_profile_photo.png"
   @@localDefaultImage = "/assets/default_directory_profile_photo.png"
 
   def initialize(pivots_url)
