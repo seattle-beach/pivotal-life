@@ -76,6 +76,12 @@ Now run the local server:
 Then navigate to <http://localhost:3030/> for the default dashboard or <http://localhost:3030/nyc> to see NYC's.
 Log in to basic auth using the `AUTH_USERNAME` and `AUTH_PASSWORD` from the `.env` file.
 
+If you see openssl errors when running locally:
+
+    $ brew postinstall openssl
+
+TODO: Figure out what is touching /usr/local/etc/openssl/cert.pem
+
 ## Adding an Office Dashboard
 
 If you'd like to add your own office's dashboard, do the following:
@@ -119,7 +125,7 @@ This application uses the following:
 - Only Tweets with pictures will appear in the feed
 - You must add your Twitter handle to your [Pivots profile](https://pivots.pivotallabs.com)
 
-# Ruby version
+### Ruby version
 
 - CF requires the ruby version to be in the Gemfile
 - If you need to upgrade your ruby version, make sure to change both the .ruby-version file, Gemfile, and .travis.yml
