@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.2'
 
 gem 'dashing', :git => 'https://github.com/Shopify/dashing.git', :ref => '5b585d'
 gem 'dotenv'

@@ -4,7 +4,7 @@ ENV_FILE=".env"
 VAR_LIST="varlist"
 
 createFromCF() {
-  echo "Creating new .env file from Cloud Foundry pivotal-life environment."
+  echo "Creating new .env file from Cloud Foundry pivotal-life-staging environment."
   CF_COLOR=false cf env pivotal-life-staging | sed '/Getting env variables.*/,/User-Provided:/d' | grep ':' | sed -e 's/\: */=/' > $ENV_FILE
 }
 

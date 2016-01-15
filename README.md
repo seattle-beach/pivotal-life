@@ -99,9 +99,33 @@ Once you've checked your changes on the staging environment, you can push to Pro
 
 Navigate to <http://pivotal-life.cfapps.io/>
 
+## Accounts
+The accounts for this app should be associated with the [Pivotal Life](pivotal-life@googlegroups.com) Google group.
+
+This application uses the following:
+
+- [Google API Client](https://developers.google.com/api-client-library/ruby/) - used for Calendar
+- [Twitter](https://apps.twitter.com)
+- [Forecast.io](https://developer.forecast.io/)
+- [SF 511](http://511.org/developer-resources_transit-api.asp)
+- [Yelp](https://www.yelp.com/developers/documentation/v2/overview) - currently defunct
+- [TomTom](http://developer.tomtom.com/) - appears to be unused
+
+## Gotchas
+
+### Twitter Picture
+
+- Use the hashtag "#pivotallife" (case insensitive)
+- Only Tweets with pictures will appear in the feed
+- You must add your Twitter handle to your [Pivots profile](https://pivots.pivotallabs.com)
+
+# Ruby version
+
+- CF requires the ruby version to be in the Gemfile
+- If you need to upgrade your ruby version, make sure to change both the .ruby-version file and the Gemfile
+
 ## Resources
 
 - [Pivotal Tracker Project](https://www.pivotaltracker.com/n/projects/1003138)
 - [Dashing](http://shopify.github.com/dashing)
 - PM: Brian Kelly (bkelly at pivotal dot io)
-
