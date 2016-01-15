@@ -9,7 +9,7 @@ class PivotTwitterNameFetcher
   attr_accessor :pivots_url
 
   def initialize credentials
-    self.pivots_url = "https://pivots.pivotallabs.com/api/users.json?email=#{credentials[:email]}&authentication_token=#{credentials[:authentication_token]}"
+    self.pivots_url = "https://pivots.cfapps.io/api/users.json?email=#{credentials[:email]}&authentication_token=#{credentials[:authentication_token]}"
   end
 
   def get_twitter_names
