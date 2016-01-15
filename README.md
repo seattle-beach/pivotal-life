@@ -122,7 +122,7 @@ This application uses the following:
 # Ruby version
 
 - CF requires the ruby version to be in the Gemfile
-- If you need to upgrade your ruby version, make sure to change both the .ruby-version file and the Gemfile
+- If you need to upgrade your ruby version, make sure to change both the .ruby-version file, Gemfile, and .travis.yml
 
 ## Resources
 

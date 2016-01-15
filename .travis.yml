@@ -1,7 +1,7 @@
 sudo: false
 language: ruby
 rvm:
-- 2.1.2
+- 2.2.3
 before_deploy:
   - git config user.name "Pivotal Life Travis CI"
   - git config user.email "pivotal-life@example.com"
