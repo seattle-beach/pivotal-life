@@ -15,8 +15,9 @@ class TwitterPictureFetcher
   def initialize client
     self.client = client
   end
+
   def get_picture_urls_by_hashtag hashtag
-    self.client.search("##{hashtag} filter:images", :result_type => "recent").collect {|x|
+    self.client.search("##{hashtag} filter:images -RT", :result_type => "recent").collect {|x|
       {
         url: x.media.collect {|y| y.media_url.to_s}.flatten.uniq.first,
         user_name: x.user.screen_name.downcase

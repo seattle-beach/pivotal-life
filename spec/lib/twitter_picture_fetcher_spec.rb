@@ -16,31 +16,32 @@ describe TwitterPictureFetcher, :vcr => true do
     it 'returns a twitter api specified amount of urls, removing duplicates and downcasing usernames' do
       urls = @pic_fetcher.get_picture_urls_by_hashtag '#pivotal'
 
-      expected = [{:url => "http://pbs.twimg.com/media/Bv25la1CcAEFltV.jpg", :user_name => "heikal_amr"},
-                  {:url => "http://pbs.twimg.com/media/Bv2zDNaCIAEjGt-.jpg", :user_name => "teazyfresco"},
-                  {:url => "http://pbs.twimg.com/media/Bv00tE0IAAApwNt.jpg", :user_name => "atoms2bits"},
-                  {:url => "http://pbs.twimg.com/media/Bvo63KoIIAArD7M.jpg", :user_name => "peterboaventura"},
-                  {:url => "http://pbs.twimg.com/media/BvxCeP8IcAA0rRL.jpg", :user_name => "angellmclovin"},
-                  {:url => "http://pbs.twimg.com/media/BvxDK8nIIAA72VF.jpg", :user_name => "9acino_"},
-                  {:url => "http://pbs.twimg.com/media/BvxCeP8IcAA0rRL.jpg", :user_name => "pivotgang"},
-                  {:url => "http://pbs.twimg.com/media/BuabBEhIYAAFYKb.jpg", :user_name => "asimjalis"},
-                  {:url => "http://pbs.twimg.com/media/Bvo63KoIIAArD7M.jpg", :user_name => "markjan4"},
-                  {:url => "http://pbs.twimg.com/media/Bvo63KoIIAArD7M.jpg", :user_name => "wbruninx"},
-                  {:url => "http://pbs.twimg.com/media/Bvao_7_IgAEN-GO.jpg", :user_name => "badnima"},
-                  {:url => "http://pbs.twimg.com/media/Bvao_7_IgAEN-GO.jpg", :user_name => "rippmn"},
-                  {:url => "http://pbs.twimg.com/media/Bvf5d2zIEAE1Fjj.jpg", :user_name => "atoms2bits"},
-                  {:url => "http://pbs.twimg.com/media/Bvf0mcCIIAA-v1A.png", :user_name => "atoms2bits"},
-                  {:url => "http://pbs.twimg.com/media/BvfgYQ8CIAEdD6m.png", :user_name => "abelimited"},
-                  {:url => "http://pbs.twimg.com/media/Bvb_2XqCcAEwWip.jpg", :user_name => "boogabee"},
-                  {:url => "http://pbs.twimg.com/media/BvbpVaUIEAAHVPx.png", :user_name => "bigdatajoerossi"},
-                  {:url => "http://pbs.twimg.com/media/BvbQ2WdIAAIqrUe.jpg", :user_name => "affanato"},
-                  {:url => "http://pbs.twimg.com/media/Bva5cMNIgAII7OL.jpg", :user_name => "stevenbbecker"},
-                  {:url => "http://pbs.twimg.com/media/Bva5cMNIgAII7OL.jpg", :user_name => "boogabee"},
-                  {:url => "http://pbs.twimg.com/media/Bvao_7_IgAEN-GO.jpg", :user_name => "wattersjames"},
-                  {:url => "http://pbs.twimg.com/media/Bvao_7_IgAEN-GO.jpg", :user_name => "mstine"},
-                  {:url => "http://pbs.twimg.com/media/Bvao_7_IgAEN-GO.jpg", :user_name => "boogabee"},
-                  {:url => "http://pbs.twimg.com/media/BvYphshIIAADQpE.jpg", :user_name => "atoms2bits"},
-                  {:url => "http://pbs.twimg.com/media/BvWL15TIMAASHnK.jpg", :user_name => "_tweetsome"}
+      expected = [
+        {url: "http://pbs.twimg.com/media/CZAT0SsUQAAo4wu.png", user_name: "sarge_siddiqui"},
+        {url: "http://pbs.twimg.com/media/CYwcN-IWwAACWYc.png", user_name: "vmware_be"},
+        {url: "http://pbs.twimg.com/media/CY3kNZMWAAAI60W.png", user_name: "dinkoeror"},
+        {url: "http://pbs.twimg.com/media/CY3kNZMWAAAI60W.png", user_name: "emcacademics"},
+        {url: "http://pbs.twimg.com/media/CYy3RD5VAAARHSn.jpg", user_name: "the_sales_guy"},
+        {url: "http://pbs.twimg.com/media/CYx3zEzWAAA7bF_.jpg", user_name: "insightbrief"},
+        {url: "http://pbs.twimg.com/media/CYwXO6OUsAAtMy2.png", user_name: "timbukonesens"},
+        {url: "http://pbs.twimg.com/media/CYwT-dMWMAAq7Y-.jpg", user_name: "asfiyahussain"},
+        {url: "http://pbs.twimg.com/media/CYs8LKUWYAADxKo.jpg", user_name: "insightbrief"},
+        {url: "http://pbs.twimg.com/media/CYqgQ9cVAAApMRq.jpg", user_name: "the_sales_guy"},
+        {url: "http://pbs.twimg.com/media/CYqCl3tUwAEdjsb.jpg", user_name: "coolbox_studio"},
+        {url: "http://pbs.twimg.com/media/CYp7np8WYAA-i2Q.jpg", user_name: "lashawndobbs"},
+        {url: "http://pbs.twimg.com/media/CYoJzY1U0AESMgn.jpg", user_name: "faizana_samreen"},
+        {url: "http://pbs.twimg.com/media/CYnWOCwWcAAKkJb.jpg", user_name: "rgamal89"},
+        {url: "http://pbs.twimg.com/media/CYmxlDbWsAMIlAY.jpg", user_name: "nehasoni0306"},
+        {url: "http://pbs.twimg.com/media/CYmubqGUwAEoBC_.jpg", user_name: "happydespitecp"},
+        {url: "http://pbs.twimg.com/media/CYk_JRdWYAEaPUC.jpg", user_name: "varunsharma14"},
+        {url: "http://pbs.twimg.com/media/CYjD-GaWMAExUcw.jpg", user_name: "the_sales_guy"},
+        {url: "http://pbs.twimg.com/media/CYi8q7UWYAE_6ml.jpg", user_name: "manojbelhi"},
+        {url: "http://pbs.twimg.com/media/CYiooKiW8AA2mCx.jpg", user_name: "insightbrief"},
+        {url: "http://pbs.twimg.com/media/CYiLZ7BWwAEjG37.jpg", user_name: "the_sales_guy"},
+        {url: "http://pbs.twimg.com/media/CYh0qpGUQAEmZtJ.jpg", user_name: "elainebeare"},
+        {url: "http://pbs.twimg.com/media/CYeZ85tUkAEPpPY.png", user_name: "dbaker007"},
+        {url: "http://pbs.twimg.com/media/CYX9x7kUoAACkiQ.jpg", user_name: "insightbrief"},
+        {url: "http://pbs.twimg.com/media/CYTfRszU0AAifsb.jpg", user_name: "pivotalphysio"}
       ]
 
       expect(urls).to eq expected
@@ -49,6 +50,31 @@ describe TwitterPictureFetcher, :vcr => true do
     it 'returns an empty array for no results' do
       urls = @pic_fetcher.get_picture_urls_by_hashtag '#noonehasusedthisyet'
       expect(urls).to eq []
+    end
+
+    # The following two tweets appear in the recorded cassette data
+    # Because they are retweets, get_picture_urls_by_hashtag should not return them
+    # {url: "http://pbs.twimg.com/media/CRr_HUSUsAAlD3T.jpg", user_name: "applecinnam0n"}
+    # {url: "http://pbs.twimg.com/media/CYyRQ1kWMAANoaN.jpg", user_name: "spilth"}
+    # {url: "http://pbs.twimg.com/media/CYkr_hCU0AAKX-E.jpg", user_name: "leckylao"}
+    # {url: "http://pbs.twimg.com/media/CYkr_hCU0AAKX-E.jpg", user_name: "shaunnorris"}
+    # {url: "http://pbs.twimg.com/media/CYkr_hCU0AAKX-E.jpg", user_name: "simon_elisha"}
+
+    it 'excludes retweets' do
+      urls = @pic_fetcher.get_picture_urls_by_hashtag '#pivotallife'
+      expected = [
+        {url: "http://pbs.twimg.com/media/CZAwH19WcAA1hjc.jpg", user_name: "spilth"},
+        {url: "http://pbs.twimg.com/media/CZAqDg1W8AQ8Gh9.jpg", user_name: "dannyzen"},
+        {url: "http://pbs.twimg.com/media/CZApZPZWkAAu7Bb.jpg", user_name: "mike_kenyon"},
+        {url: "http://pbs.twimg.com/media/CY8tDs6WwAEBog0.jpg", user_name: "mike_kenyon"},
+        {url: "http://pbs.twimg.com/media/CYyrry_UkAUGEgL.jpg", user_name: "spilth"},
+        {url: "http://pbs.twimg.com/media/CYyf3kMU0AE8nXU.jpg", user_name: "applecinnam0n"},
+        {url: "http://pbs.twimg.com/media/CYyRQ1kWMAANoaN.jpg", user_name: "applecinnam0n"},
+        {url: "http://pbs.twimg.com/media/CYpu9UpUwAArhCm.jpg", user_name: "usedrecently"},
+        {url: "http://pbs.twimg.com/media/CYkr_hCU0AAKX-E.jpg", user_name: "lozcrowther"}
+      ]
+
+      expect(urls).to eq expected
     end
   end
 end

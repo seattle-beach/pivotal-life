@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.twitter.com/1.1/search/tweets.json?count=100&q=%23%23noonehasusedthisyet%20filter:images&result_type=recent
+    uri: https://api.twitter.com/1.1/search/tweets.json?count=100&q=%23%23noonehasusedthisyet%20filter:images%20-RT&result_type=recent
     body:
       encoding: US-ASCII
       string: ''
@@ -10,11 +10,11 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - Twitter Ruby Gem 5.5.1
+      - TwitterRubyGem/5.15.0
       Authorization:
-      - OAuth oauth_consumer_key="TWITTER_CONSUMER_KEY", oauth_nonce="96507b314c13372a070bb276adcd8d2d",
-        oauth_signature="pXwDlS5T6AR2feXvr46iIIFVC%2FQ%3D", oauth_signature_method="HMAC-SHA1",
-        oauth_timestamp="1409000932", oauth_token="TWITTER_OAUTH_TOKEN", oauth_version="1.0"
+      - OAuth oauth_consumer_key="TWITTER_CONSUMER_KEY", oauth_nonce="50c256d5d4d0981f0bf64c05d0d3fcfa",
+        oauth_signature="Qre8XZjLqm%2F%2B663Hqgmlhks2dOI%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1453131324", oauth_token="TWITTER_OAUTH_TOKEN", oauth_version="1.0"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -24,30 +24,34 @@ http_interactions:
     headers:
       Cache-Control:
       - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
       Content-Length:
-      - '235'
+      - '244'
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Mon, 25 Aug 2014 21:09:15 GMT
+      - Mon, 18 Jan 2016 15:35:33 GMT
       Expires:
       - Tue, 31 Mar 1981 05:00:00 GMT
       Last-Modified:
-      - Mon, 25 Aug 2014 21:09:15 GMT
+      - Mon, 18 Jan 2016 15:35:33 GMT
       Pragma:
       - no-cache
       Server:
-      - tfe_b
+      - tsa_b
       Set-Cookie:
-      - guest_id=v1%3A140900095593879673; Domain=.twitter.com; Path=/; Expires=Wed,
-        24-Aug-2016 21:09:15 UTC
-      - lang=en
+      - guest_id=v1%3A145313133387106228; Domain=.twitter.com; Path=/; Expires=Wed,
+        17-Jan-2018 15:35:33 UTC
+      - lang=en; Path=/
       Status:
       - 200 OK
       Strict-Transport-Security:
       - max-age=631138519
       X-Access-Level:
       - read
+      X-Connection-Hash:
+      - 17bdf82d3ba7d79c83a1eee74913ee25
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -55,16 +59,20 @@ http_interactions:
       X-Rate-Limit-Limit:
       - '180'
       X-Rate-Limit-Remaining:
-      - '177'
+      - '174'
       X-Rate-Limit-Reset:
-      - '1409001617'
+      - '1453131482'
+      X-Response-Time:
+      - '58'
       X-Transaction:
-      - 3658e6711a00ac2b
+      - b1cdb493d8af7cfd
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
       X-Xss-Protection:
       - 1; mode=block
     body:
-      encoding: UTF-8
-      string: '{"statuses":[],"search_metadata":{"completed_in":0.009,"max_id":504012577547227136,"max_id_str":"504012577547227136","query":"%23%23noonehasusedthisyet+filter%3Aimages","refresh_url":"?since_id=504012577547227136&q=%23%23noonehasusedthisyet%20filter%3Aimages&result_type=recent&include_entities=1","count":100,"since_id":0,"since_id_str":"0"}}'
+      encoding: ASCII-8BIT
+      string: '{"statuses":[],"search_metadata":{"completed_in":0.034,"max_id":689108798800314368,"max_id_str":"689108798800314368","query":"%23%23noonehasusedthisyet+filter%3Aimages+-RT","refresh_url":"?since_id=689108798800314368&q=%23%23noonehasusedthisyet%20filter%3Aimages%20-RT&result_type=recent&include_entities=1","count":100,"since_id":0,"since_id_str":"0"}}'
     http_version: 
-  recorded_at: Mon, 25 Aug 2014 21:08:52 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Mon, 18 Jan 2016 15:35:24 GMT
+recorded_with: VCR 3.0.1
