@@ -5,6 +5,7 @@ coverage
 .idea
 vendor
 varlist.complete
+rawenv.fromcf
 auth_secrets/*
 
 REVISION
