@@ -33,3 +33,5 @@ sm:
   name: Los Angeles
   calendar:
      id: pivotal.io_2d3130373835303330383331@resource.calendar.google.com
+sydney:
+  name: Sydney
