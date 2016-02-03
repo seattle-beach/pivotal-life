@@ -1,0 +1,168 @@
+resources:
+  - name: pivotal-life
+    type: git
+    check_every: 15s
+    source:
+      uri: https://github.com/pivotal/pivotal-life.git
+      branch: wip/ruby-2.2.4
+
+  - name: db-controller
+    type: mysql
+
+  - name: prodtestcode
+    type: git
+
+  - name: prodfinalcode
+    type: git
+
+jobs:
+  - name: testing
+    plan:
+    - get: pivotal-life
+      trigger: true
+#    - task: ruby-version
+#      config:
+#        params:
+#          BUNDLE_GEMFILE: pivotal-life/Gemfile
+#        platform: linux
+#        image: "docker:///ruby"
+#        inputs:
+#        - name: pivotal-life
+#        run:
+#          path: bundle
+#          args: ['install']
+    - task: unit-tests
+      config:
+        platform: linux
+        image: "docker:///ruby"
+        inputs:
+        - name: pivotal-life
+#        run:
+#          path: bundle
+#          args: ['install']
+        run:
+          path: pivotal-life/run
+      on_success:
+        task: unit-tests-success
+        config:
+          run:
+            path: echo
+            args: ["I passed unit testing."]
+      on_failure:
+        task: unit-tests-failure
+        config:
+          run:
+            path: echo
+            args: ["I FAILED unit testing."]
+
+  - name: seeding
+    plan:
+    - get: pivotal-life
+      trigger: true
+      passed: [testing]
+    - task: seeding-tests
+      config:
+            platform: linux
+            run:
+              path: echo
+              args: ["I passed seeding testing."]
+
+  - name: app-acceptance
+    plan:
+    - get: pivotal-life
+      trigger: true
+      passed: [seeding]
+    - task: app-acceptance-tests
+      config:
+            platform: linux
+            run:
+              path: echo
+              args: ["I passed app acceptance."]
+
+  - name: etl-acceptance
+    plan:
+    - get: pivotal-life
+      trigger: true
+      passed: [seeding]
+    - task: etl-acceptance-tests
+      config:
+            platform: linux
+            run:
+              path: echo
+              args: ["I passed etl acceptance."]
+
+  - name: data-migration-acceptance
+    plan:
+    - get: pivotal-life
+      trigger: true
+      passed: [seeding]
+    - task: data-migration-acceptance-tests
+      config:
+            platform: linux
+            run:
+              path: echo
+              args: ["I passed data migration acceptance."]
+
+  - name: app-staging
+    plan:
+    - get: pivotal-life
+      trigger: true
+      passed: [app-acceptance]
+    - task: app-staging-tests
+      config:
+            platform: linux
+            run:
+              path: echo
+              args: ["I passed app staging."]
+
+  - name: etl-staging
+    plan:
+    - get: pivotal-life
+      trigger: true
+      passed: [etl-acceptance]
+    - task: etl-staging-tests
+      config:
+            platform: linux
+            run:
+              path: echo
+              args: ["I passed etl staging."]
+
+  - name: data-migration-staging
+    plan:
+    - get: pivotal-life
+      trigger: true
+      passed: [data-migration-acceptance]
+    - task: data-migration-staging-tests
+      config:
+            platform: linux
+            run:
+              path: echo
+              args: ["I passed data migration staging."]
+
+  - name: prod-packaging
+    plan:
+    - aggregate:
+      - get: pivotal-life
+        trigger: true
+        passed: [app-staging]
+      - get: pivotal-life
+        trigger: true
+        passed: [etl-staging]
+      - get: pivotal-life
+        trigger: true
+        passed: [data-migration-staging]
+      - put: prodtestcode
+    - task: production-packaging
+      config:
+            platform: linux
+            run:
+              path: echo
+              args: ["I passed production packaging."]
+
+  - name: prod-test
+    plan:
+    - get: prodtestcode
+      trigger: true
+      passed: [prod-packaging]
+    - get: db-controller
+    - put: prodfinalcode
