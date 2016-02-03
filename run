@@ -2,4 +2,4 @@
 
 cd pivotal-life
 bundle
-bundle exec rspec 
+bundle exec rake
