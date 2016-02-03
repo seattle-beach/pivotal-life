@@ -1,4 +1,4 @@
 #!/bin/sh
 
 bundle
-bundle exec rspec pivotal-life/spec 
+bundle exec rspec --require pivotal-life/spec/spec_helper pivotal-life/spec 
