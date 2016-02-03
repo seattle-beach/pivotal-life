@@ -1,4 +1,4 @@
 #!/bin/sh
 
 bundle
-bundle exec rake
+bundle exec rake --rakefile pivotal-life/Rakefile
