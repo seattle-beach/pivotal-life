@@ -34,4 +34,5 @@ group :test do
   gem 'capybara'
   gem 'timecop'
   gem 'execjs'
+  gem 'therubyracer'
 end
