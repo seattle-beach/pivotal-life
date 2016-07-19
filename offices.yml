@@ -7,6 +7,10 @@ sf:
   name: San Francisco
 #  calendar:
 #    url: http://www.google.com/calendar/feeds/pivotallabs.com_cdjvcp4tfaum7m0kie2na4dpgc%40group.calendar.google.com/public/full
+sydney:
+  name: Sydney
+  calendar:
+    id: pivotal.io_3331323435373238373938@resource.calendar.google.com
 london:
   name: London
   # This is a Pivotal Tech Talks calendar. May have to be replaced with a general event cal. Also the service account doesn't have access to this one
@@ -33,7 +37,3 @@ sm:
   name: Los Angeles
   calendar:
      id: pivotal.io_2d3130373835303330383331@resource.calendar.google.com
-sydney:
-  name: Sydney
-  calendar:
-    id: pivotal.io_3331323435373238373938@resource.calendar.google.com
