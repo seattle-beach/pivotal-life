@@ -24,11 +24,11 @@ pa:
   name: Palo Alto
   calendar:
     id: pivotal.io_gdmvh1u9r7jc67qiob4cr7ibf4@group.calendar.google.com
-#sea:
-#  name: Seattle
-#  calendar:
-#    # This is the interview calendar..
-#    id: pivotal.io_dma7avhanktv4tcp0cd1hupit8@group.calendar.google.com
+sea:
+ name: Seattle
+ calendar:
+   # This is the interview calendar..
+   id: pivotal.io_qgrlap9ooml7tojb6i3rou6dag@group.calendar.google.com
 boulder:
   name: Boulder
 denver:

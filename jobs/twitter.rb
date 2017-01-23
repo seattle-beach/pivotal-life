@@ -12,7 +12,7 @@ client = Twitter::REST::Client.new do |config|
 end
 
 user_name = 'spilth'
-list_name = 'pivotal-life'
+list_name = 'pivotallife'
 
 SCHEDULER.every '10m', :first_in => 0 do |job|
   begin
@@ -24,7 +24,8 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
       end
       send_event('twitter_mentions', comments: tweets)
     end
-  rescue Twitter::Error
+  rescue Twitter::Error => e
     puts "\e[33mFor the twitter widget to work, you need to put in your twitter API keys in the jobs/twitter.rb file.\e[0m"
+    p e
   end
 end
