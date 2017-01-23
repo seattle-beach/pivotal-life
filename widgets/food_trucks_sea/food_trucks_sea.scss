@@ -1,0 +1,20 @@
+.widget-food-trucks-sea {
+  background-color: white;
+  color: black;
+
+  padding: 12px;
+
+  li {
+    padding-top: 10px;
+    text-align: left;
+
+    span {
+      display: block;
+
+      &.type {
+        font-size: 16px;
+        font-style: italic;
+      }
+    }
+  }
+}
