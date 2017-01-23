@@ -27,7 +27,6 @@ pa:
 sea:
  name: Seattle
  calendar:
-   # This is the interview calendar..
    id: pivotal.io_qgrlap9ooml7tojb6i3rou6dag@group.calendar.google.com
 boulder:
   name: Boulder

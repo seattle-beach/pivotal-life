@@ -20,6 +20,19 @@ describe CalendarFetcher do
     end
   end
 
+  describe 'missing calendar' do
+    let(:calendar_id) { 'pivotal.io_456789654r876@group.calendar.google.com' }
+    let(:fetcher) { CalendarFetcher.new }
+
+    it 'returns an empty list' do
+      Timecop.freeze('2017-01-23T12:01:28-08:00') do
+        VCR.use_cassette('CalendarFetcher/missing') do
+          expect(fetcher.get_events(calendar_id)).to eq([])
+        end
+      end
+    end
+  end
+
   let(:event) { CalendarFetcher::Event.new }
   let(:curr_zone) { Time.now.strftime("%z") }
 

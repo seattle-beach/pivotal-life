@@ -8,7 +8,7 @@ describe TextMessageFetcher do
   let(:basic_password) {'test-pw'}
 
   before(:each) do
-    stub_request(:get, "http://test-un:test-pw@pivot-texts/texts/all").to_return(:body => File.read('spec/fixtures/pivot_texts.json'))
+    stub_request(:get, "http://pivot-texts/texts/all").to_return(:body => File.read('spec/fixtures/pivot_texts.json'))
   end
 
   describe '#[]' do

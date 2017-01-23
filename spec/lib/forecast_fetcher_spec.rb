@@ -39,6 +39,10 @@ describe ForecastFetcher do
     'https://api.forecast.io/forecast/FAKE-API-KEY/-33.865,151.209?units=si'
   end
 
+  let(:seattle_forecast_url) do
+    'https://api.forecast.io/forecast/FAKE-API-KEY/47.5989653,-122.3359876?units=us'
+  end
+
   before do
     stub_request(:get, nyc_forecast_url).to_return(:body => File.read('spec/fixtures/forecast/nyc.json'))
     stub_request(:get, pa_forecast_url).to_return(:body => File.read('spec/fixtures/forecast/palo-alto.json'))
@@ -48,6 +52,7 @@ describe ForecastFetcher do
     stub_request(:get, boulder_forecast_url).to_return(:body => File.read('spec/fixtures/forecast/boulder.json'))
     stub_request(:get, denver_forecast_url).to_return(:body => File.read('spec/fixtures/forecast/denver.json'))
     stub_request(:get, sydney_forecast_url).to_return(:body => File.read('spec/fixtures/forecast/sydney.json'))
+    stub_request(:get, seattle_forecast_url).to_return(:body => File.read('spec/fixtures/forecast/seattle.json'))
   end
 
   it 'collects forecast data for each location' do
@@ -130,6 +135,16 @@ describe ForecastFetcher do
       :later_desc=>"Partly cloudy throughout the day.",
       :later_icon=>"partly-cloudy-day",
       :next_desc=>"Mostly cloudy for the hour.",
+      :next_icon=>"partly-cloudy-day"
+    })
+    expect(forecast_fetcher.data[:sea]).to eq({
+      :current_temp=>"57°F",
+      :current_icon=>"partly-cloudy-day",
+      :current_desc=>"Partly Cloudy",
+      :apparent_temp=>"57°F",
+      :later_desc=>"Partly cloudy throughout the day.",
+      :later_icon=>"partly-cloudy-day",
+      :next_desc=>"Partly cloudy for the hour.",
       :next_icon=>"partly-cloudy-day"
     })
   end

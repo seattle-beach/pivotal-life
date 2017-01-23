@@ -57,6 +57,8 @@ class CalendarFetcher
 
     @data = events
     @data.sort! { |a, b| a[:when_start_raw] <=> b[:when_start_raw] }
+  rescue Google::Apis::ClientError
+    []
   end
 
   def data
